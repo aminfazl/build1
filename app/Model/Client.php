@@ -27,7 +27,7 @@ class Client extends AppModel {
 		'clientstatus_id' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => 'Please select status',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -37,7 +37,7 @@ class Client extends AppModel {
 		'communicationchannel_id' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => 'Please select prefered Communication Channel',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -47,7 +47,7 @@ class Client extends AppModel {
 		'first_name' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => 'First Name is required',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -57,7 +57,7 @@ class Client extends AppModel {
 		'gender' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => 'Gender is required',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -67,7 +67,7 @@ class Client extends AppModel {
 		'last_name' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => 'Last Name is required',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -77,7 +77,7 @@ class Client extends AppModel {
 		'birth_date' => array(
 			'date' => array(
 				'rule' => array('date'),
-				//'message' => 'Your custom message here',
+				'message' => 'Please select a valid date',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -85,7 +85,7 @@ class Client extends AppModel {
 			),
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => 'Date of Birth is required',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -95,7 +95,7 @@ class Client extends AppModel {
 		'household_id' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => 'Please select the household',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -105,7 +105,7 @@ class Client extends AppModel {
 		'birthcountry_id' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => 'Please select the country of birth',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule

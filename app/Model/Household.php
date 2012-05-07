@@ -22,17 +22,9 @@ class Household extends AppModel {
  */
 	public $validate = array(
 		'state_id' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => 'Please select a state',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -42,7 +34,7 @@ class Household extends AppModel {
 		'suburb' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => 'Suburb is required',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -52,7 +44,7 @@ class Household extends AppModel {
 		'street_address' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => 'Street Address is required',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule

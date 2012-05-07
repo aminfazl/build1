@@ -22,7 +22,7 @@ class Sibling extends AppModel {
 		'last_name' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => 'Last name is required',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -32,7 +32,7 @@ class Sibling extends AppModel {
 		'birth_date' => array(
 			'date' => array(
 				'rule' => array('date'),
-				//'message' => 'Your custom message here',
+				'message' => 'Please enter a valid date',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -40,7 +40,7 @@ class Sibling extends AppModel {
 			),
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => 'Date of Birth is required',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -50,7 +50,7 @@ class Sibling extends AppModel {
 		'gender' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => 'Gender is required',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -60,7 +60,7 @@ class Sibling extends AppModel {
 		'first_name' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => 'First Name is required',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -78,7 +78,7 @@ class Sibling extends AppModel {
 			),
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => 'Please select a household',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule

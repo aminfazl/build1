@@ -21,7 +21,7 @@ class Filter extends AppModel {
 		'filter_name' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => 'Filter name is required',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -31,7 +31,7 @@ class Filter extends AppModel {
 		'minage' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
+				'message' => 'Please enter a number',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -41,7 +41,7 @@ class Filter extends AppModel {
 		'maxage' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
+				'message' => 'Please enter a number',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule

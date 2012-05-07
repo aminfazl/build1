@@ -15,7 +15,7 @@ class Communicationchannel extends AppModel {
 		'communicationchannel_name' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => 'Communication Channel is required',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
