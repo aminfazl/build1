@@ -1,0 +1,27 @@
+Create Table Departments(
+id int auto_increment,
+dept_name varchar(20) Not Null,
+Primary Key(id));
+
+Create Table Employees(
+id int auto_increment,
+first_name varchar(20) Not Null,
+last_name varchar(20) Not Null,
+DOB Date Not Null,
+gender Enum('M', 'F') Not Null,
+hire_date Date Not Null,
+department_id int,
+Primary Key(id));
+
+Insert Into Departments(dept_name) Values('Human Resource');
+Insert Into Departments(dept_name) Values('Marketing');
+Insert Into Departments(dept_name) Values('Accounting');
+
+Insert Into Employees(first_name, last_name, DOB, gender, hire_date, department_id)
+Values ('Amin', 'Fazl', '1984-09-11', 'M', '2009-08-07', 3);
+Insert Into Employees(first_name, last_name, DOB, gender, hire_date, department_id)
+Values ('Sanaz', 'Forouzanfar', '1984-09-19', 'M', '2011-11-22', 2);
+Insert Into Employees(first_name, last_name, DOB, gender, hire_date)
+Values ('Janet', 'Fraser', '1966-12-18', 'M', '2005-01-22');
+Insert Into Employees(first_name, last_name, DOB, gender, hire_date)
+Values ('George', 'Salib', '1977-07-09', 'M', '2001-04-01');
