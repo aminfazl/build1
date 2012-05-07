@@ -17,7 +17,7 @@
 		<td><?php echo h($carer['Carer']['birth_date']); ?>&nbsp;</td>
 
 		<td>
-			<?php echo $this->Html->link($carer['Household']['id'], array('controller' => 'households', 'action' => 'view', $carer['Household']['id'])); ?>
+			<?php echo $this->Html->link($carer['Household']['street_address'], array('controller' => 'households', 'action' => 'view', $carer['Household']['id'])); ?>
 		</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $carer['Carer']['id'])); ?>

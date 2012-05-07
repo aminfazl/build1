@@ -6,6 +6,9 @@ App::uses('AppModel', 'Model');
  * @property Client $Client
  */
 class Communicationchannel extends AppModel {
+	
+public $displayField = 'communicationchannel_name';
+
 /**
  * Validation rules
  *

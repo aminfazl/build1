@@ -23,7 +23,7 @@
 		</dd>
 		<dt><?php echo __('Household'); ?></dt>
 		<dd>
-			<?php echo $this->Html->link($carer['Household']['id'], array('controller' => 'households', 'action' => 'view', $carer['Household']['id'])); ?>
+			<?php echo $this->Html->link($carer['Household']['street_address'], array('controller' => 'households', 'action' => 'view', $carer['Household']['id'])); ?>
 			&nbsp;
 		</dd>
 	</dl>
