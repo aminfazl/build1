@@ -7,7 +7,7 @@
 		echo $this->Form->input('clientstatus_id');
 		echo $this->Form->input('communicationchannel_id');
 		echo $this->Form->input('first_name');
-		echo $this->Form->input('gender',array('label' => 'Gender', 'type' => 'select', 'options' => array('M'=>'M','F'=>'F')));
+		echo $this->Form->input('gender',array('label' => 'Gender', 'type' => 'select', 'options' => array('M'=>'Male','F'=>'Female')));
 		echo $this->Form->input('last_name');
 		echo $this->Form->input('birth_date');
 		echo $this->Form->input('household_id');
