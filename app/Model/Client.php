@@ -3,61 +3,29 @@ App::uses('AppModel', 'Model');
 /**
  * Client Model
  *
- * @property Clientstatus $Clientstatus
+ * @property Disability $Disability
+ * @property Prioritylevel $Prioritylevel
+ * @property Fundingsource $Fundingsource
+ * @property Religion $Religion
+ * @property Birthcountry $Birthcountry
  * @property Communicationchannel $Communicationchannel
- * @property Household $Household
- * @property country $country
+ * @property Status $Status
+ * @property Family $Family
  * @property Interestslog $Interestslog
- * @property Carer $Carer
- * @property Sibling $Sibling
+ * @property Timesheet $Timesheet
+ * @property Event $Event
  */
 class Client extends AppModel {
-/**
- * Display field
- *
- * @var string
- */
-	public $displayField = 'first_name';
 /**
  * Validation rules
  *
  * @var array
  */
 	public $validate = array(
-		'clientstatus_id' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
-				'message' => 'Please select status',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'communicationchannel_id' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
-				'message' => 'Please select prefered Communication Channel',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
 		'first_name' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				'message' => 'First Name is required',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'gender' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
-				'message' => 'Gender is required',
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -67,7 +35,7 @@ class Client extends AppModel {
 		'last_name' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				'message' => 'Last Name is required',
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -77,25 +45,77 @@ class Client extends AppModel {
 		'birth_date' => array(
 			'date' => array(
 				'rule' => array('date'),
-				'message' => 'Please select a valid date',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-			'notempty' => array(
-				'rule' => array('notempty'),
-				'message' => 'Date of Birth is required',
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'household_id' => array(
+		'disability_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'school_name' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				'message' => 'Please select the household',
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'otherservices_description' => array(
+			'notempty' => array(
+				'rule' => array('notempty'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'prioritylevel_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'fundingsource_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'religion_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'dateaccepted' => array(
+			'date' => array(
+				'rule' => array('date'),
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -103,9 +123,39 @@ class Client extends AppModel {
 			),
 		),
 		'birthcountry_id' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
-				'message' => 'Please select the country of birth',
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'communicationchannel_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'status_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'family_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -122,9 +172,37 @@ class Client extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'Clientstatus' => array(
-			'className' => 'Clientstatus',
-			'foreignKey' => 'clientstatus_id',
+		'Disability' => array(
+			'className' => 'Disability',
+			'foreignKey' => 'disability_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
+		'Prioritylevel' => array(
+			'className' => 'Prioritylevel',
+			'foreignKey' => 'prioritylevel_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
+		'Fundingsource' => array(
+			'className' => 'Fundingsource',
+			'foreignKey' => 'fundingsource_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
+		'Religion' => array(
+			'className' => 'Religion',
+			'foreignKey' => 'religion_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
+		'Birthcountry' => array(
+			'className' => 'Birthcountry',
+			'foreignKey' => 'birthcountry_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
@@ -136,16 +214,16 @@ class Client extends AppModel {
 			'fields' => '',
 			'order' => ''
 		),
-		'Household' => array(
-			'className' => 'Household',
-			'foreignKey' => 'household_id',
+		'Status' => array(
+			'className' => 'Status',
+			'foreignKey' => 'status_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		),
-		'Country' => array(
-			'className' => 'Country',
-			'foreignKey' => 'birthcountry_id',
+		'Family' => array(
+			'className' => 'Family',
+			'foreignKey' => 'family_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
@@ -170,6 +248,19 @@ class Client extends AppModel {
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
+		),
+		'Timesheet' => array(
+			'className' => 'Timesheet',
+			'foreignKey' => 'client_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
 		)
 	);
 
@@ -180,26 +271,11 @@ class Client extends AppModel {
  * @var array
  */
 	public $hasAndBelongsToMany = array(
-		'Carer' => array(
-			'className' => 'Carer',
-			'joinTable' => 'clients_carers',
+		'Event' => array(
+			'className' => 'Event',
+			'joinTable' => 'events_clients',
 			'foreignKey' => 'client_id',
-			'associationForeignKey' => 'carer_id',
-			'unique' => 'keepExisting',
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'finderQuery' => '',
-			'deleteQuery' => '',
-			'insertQuery' => ''
-		),
-		'Sibling' => array(
-			'className' => 'Sibling',
-			'joinTable' => 'clients_siblings',
-			'foreignKey' => 'client_id',
-			'associationForeignKey' => 'sibling_id',
+			'associationForeignKey' => 'event_id',
 			'unique' => 'keepExisting',
 			'conditions' => '',
 			'fields' => '',
