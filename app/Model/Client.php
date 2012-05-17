@@ -201,7 +201,7 @@ class Client extends AppModel {
 			'order' => ''
 		),
 		'Birthcountry' => array(
-			'className' => 'Country',
+			'className' => 'Birthcountry',
 			'foreignKey' => 'birthcountry_id',
 			'conditions' => '',
 			'fields' => '',
@@ -215,7 +215,7 @@ class Client extends AppModel {
 			'order' => ''
 		),
 		'Status' => array(
-			'className' => 'Clientstatus',
+			'className' => 'Status',
 			'foreignKey' => 'status_id',
 			'conditions' => '',
 			'fields' => '',
