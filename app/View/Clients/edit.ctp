@@ -4,7 +4,7 @@
 		<legend><?php echo __('Edit Client'); ?></legend>
 	<?php
 		echo $this->Form->input('id');
-		echo $this->Form->input('clientstatus_id');
+		echo $this->Form->input('status_id');
 		echo $this->Form->input('communicationchannel_id');
 		echo $this->Form->input('first_name');
 		echo $this->Form->input('gender',array('label' => 'Gender', 'type' => 'select', 'options' => array('M'=>'M','F'=>'F')));
