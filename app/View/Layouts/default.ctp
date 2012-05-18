@@ -70,20 +70,11 @@
          <li>
         <?php Echo $this->Html->Link('Volunteer List', '/volunteers', array('class' => 'button'));?>
         </li>
-         <li>
-        <?php Echo $this->Html->Link('Add Volunteer', '/volunteers/add');?>
-        </li>
         <li>
         <?php Echo $this->Html->Link('Statuses list', '/volunteerstatuses');?>
         </li>
         <li>
-        <?php Echo $this->Html->Link('Add Status', '/volunteerstatuses/add');?>
-        </li>
-        <li>
         <?php Echo $this->Html->Link('Timesheet List', '/Timesheets');?>
-        </li>
-        <li>
-        <?php Echo $this->Html->Link('Add Timesheet', '/Timesheets/add');?>
         </li>
         </ul>
 		</li>
