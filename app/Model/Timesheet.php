@@ -18,7 +18,7 @@ class Timesheet extends AppModel {
 		'activitytype_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
-				'message' => 'Please select a type',
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -28,7 +28,7 @@ class Timesheet extends AppModel {
 		'client_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
-				'message' => 'Please select a client',
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -38,7 +38,7 @@ class Timesheet extends AppModel {
 		'volunteer_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
-				'message' => 'Please select a volunteer',
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -48,7 +48,7 @@ class Timesheet extends AppModel {
 		'workdate' => array(
 			'date' => array(
 				'rule' => array('date'),
-				'message' => 'Please select a date',
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -58,7 +58,7 @@ class Timesheet extends AppModel {
 		'fromtime' => array(
 			'time' => array(
 				'rule' => array('time'),
-				'message' => 'Please select start time',
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -68,7 +68,7 @@ class Timesheet extends AppModel {
 		'totime' => array(
 			'time' => array(
 				'rule' => array('time'),
-				'message' => 'Please select end time',
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule

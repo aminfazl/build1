@@ -107,7 +107,7 @@
 		</div>
 	</div>
 	<?php echo $this->element('sql_dump'); ?>
-	<?php>
+	<?php
         echo $content_for_layout;
     ?>
 	

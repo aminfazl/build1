@@ -8,12 +8,12 @@
 		</dd>
 		<dt><?php echo __('Activitytype'); ?></dt>
 		<dd>
-			<?php echo $this->Html->link($timesheet['Activitytype']['activitytype_name'], array('controller' => 'activitytypes', 'action' => 'view', $timesheet['Activitytype']['id'])); ?>
+			<?php echo $this->Html->link($timesheet['Activitytype']['id'], array('controller' => 'activitytypes', 'action' => 'view', $timesheet['Activitytype']['id'])); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Client'); ?></dt>
 		<dd>
-			<?php echo $this->Html->link($timesheet['Client']['first_name'], array('controller' => 'clients', 'action' => 'view', $timesheet['Client']['id'])); ?>
+			<?php echo $this->Html->link($timesheet['Client']['id'], array('controller' => 'clients', 'action' => 'view', $timesheet['Client']['id'])); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Volunteer'); ?></dt>

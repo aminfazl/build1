@@ -16,10 +16,10 @@
 	<tr>
 		<td><?php echo h($timesheet['Timesheet']['id']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($timesheet['Activitytype']['activitytype_name'], array('controller' => 'activitytypes', 'action' => 'view', $timesheet['Activitytype']['id'])); ?>
+			<?php echo $this->Html->link($timesheet['Activitytype']['id'], array('controller' => 'activitytypes', 'action' => 'view', $timesheet['Activitytype']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($timesheet['Client']['first_name'], array('controller' => 'clients', 'action' => 'view', $timesheet['Client']['id'])); ?>
+			<?php echo $this->Html->link($timesheet['Client']['id'], array('controller' => 'clients', 'action' => 'view', $timesheet['Client']['id'])); ?>
 		</td>
 		<td>
 			<?php echo $this->Html->link($timesheet['Volunteer']['first_name'], array('controller' => 'volunteers', 'action' => 'view', $timesheet['Volunteer']['id'])); ?>
@@ -54,6 +54,13 @@
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('New Timesheet'), array('action' => 'add')); ?></li>
-
+		<li><?php echo $this->Html->link(__('List Activitytypes'), array('controller' => 'activitytypes', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Activitytype'), array('controller' => 'activitytypes', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Clients'), array('controller' => 'clients', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Client'), array('controller' => 'clients', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Volunteers'), array('controller' => 'volunteers', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Volunteer'), array('controller' => 'volunteers', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Events'), array('controller' => 'events', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Event'), array('controller' => 'events', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
