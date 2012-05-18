@@ -1,8 +1,8 @@
 <div class="eventtypes index">
-	<h2><?php echo __('Eventtypes');?></h2>
+	<h2><?php echo __('Event Types');?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('id');?></th>
+
 			<th><?php echo $this->Paginator->sort('eventtype_name');?></th>
 			<th class="actions"><?php echo __('Actions');?></th>
 	</tr>
@@ -37,8 +37,8 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New Eventtype'), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Events'), array('controller' => 'events', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Event'), array('controller' => 'events', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Event Type'), array('action' => 'add')); ?></li>
+		<!-- <li><?php echo $this->Html->link(__('List Events'), array('controller' => 'events', 'action' => 'index')); ?> </li> -->
+		<!-- <li><?php echo $this->Html->link(__('New Event'), array('controller' => 'events', 'action' => 'add')); ?> </li> -->
 	</ul>
 </div>
