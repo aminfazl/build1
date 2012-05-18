@@ -2,23 +2,19 @@
 	<h2><?php echo __('Events');?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('id');?></th>
+		
 			<th><?php echo $this->Paginator->sort('event_name');?></th>
-			<th><?php echo $this->Paginator->sort('event_description');?></th>
-			<th><?php echo $this->Paginator->sort('eventtype_id');?></th>
-			<th><?php echo $this->Paginator->sort('event_comment');?></th>
+			<th><?php echo $this->Paginator->sort('Event Types');?></th>
 			<th class="actions"><?php echo __('Actions');?></th>
 	</tr>
 	<?php
 	foreach ($events as $event): ?>
 	<tr>
-		<td><?php echo h($event['Event']['id']); ?>&nbsp;</td>
+
 		<td><?php echo h($event['Event']['event_name']); ?>&nbsp;</td>
-		<td><?php echo h($event['Event']['event_description']); ?>&nbsp;</td>
 		<td>
 			<?php echo $this->Html->link($event['Eventtype']['id'], array('controller' => 'eventtypes', 'action' => 'view', $event['Eventtype']['id'])); ?>
 		</td>
-		<td><?php echo h($event['Event']['event_comment']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $event['Event']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $event['Event']['id'])); ?>
@@ -46,11 +42,6 @@
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('New Event'), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Eventtypes'), array('controller' => 'eventtypes', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Eventtype'), array('controller' => 'eventtypes', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Clients'), array('controller' => 'clients', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Client'), array('controller' => 'clients', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Timesheets'), array('controller' => 'timesheets', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Timesheet'), array('controller' => 'timesheets', 'action' => 'add')); ?> </li>
+	
 	</ul>
 </div>
