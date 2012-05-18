@@ -24,7 +24,6 @@
 	<title>
 		<?php echo $title_for_layout; ?>
 	</title>
-
 	<?php
 		echo $this->Html->meta('icon');
 
@@ -33,8 +32,7 @@
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
-
-</script>
+	?>
 </head>
 <body>
 	<div id="container">
@@ -50,17 +48,26 @@
 		<li>
 		<?php Echo $this->Html->Link('CLIENT', '/clients');?>
         <ul class="submenu" id="clientsubmenu">
+        <li>
+        <?php Echo $this->Html->Link('Household List', '/households', array('class' => 'button'));?>
+        </li>
          <li>
         <?php Echo $this->Html->Link('Client List', '/clients', array('class' => 'button'));?>
         </li>
          <li>
-        <?php Echo $this->Html->Link('Add Client', '/clients/add');?>
+        <?php Echo $this->Html->Link('Carer List', '/carers', array('class' => 'button'));?>
         </li>
          <li>
-        <?php Echo $this->Html->Link('Statuses list', '/clientstatuses');?>
+        <?php Echo $this->Html->Link('Sibling List', '/siblings', array('class' => 'button'));?>
         </li>
         <li>
-        <?php Echo $this->Html->Link('Add Status', '/clientstatuses/add');?>
+        <?php Echo $this->Html->Link('Interest List', '/interests', array('class' => 'button'));?>
+        </li>
+        <li>
+        <?php Echo $this->Html->Link('Status List', '/clientstatuses', array('class' => 'button'));?>
+        </li>
+        <li>
+        <?php Echo $this->Html->Link('Communication List', '/communicationchannels', array('class' => 'button'));?>
         </li>
         </ul>
 		</li>
@@ -71,10 +78,10 @@
         <?php Echo $this->Html->Link('Volunteer List', '/volunteers', array('class' => 'button'));?>
         </li>
         <li>
-        <?php Echo $this->Html->Link('Statuses list', '/volunteerstatuses');?>
+        <?php Echo $this->Html->Link('Statuses list', '/volunteerstatuses', array('class' => 'button'));?>
         </li>
         <li>
-        <?php Echo $this->Html->Link('Timesheet List', '/Timesheets');?>
+        <?php Echo $this->Html->Link('Timesheet', '/Timesheets', array('class' => 'button'));?>
         </li>
         </ul>
 		</li>
@@ -98,10 +105,6 @@
 		</div>
 	</div>
 	<?php echo $this->element('sql_dump'); ?>
-	<?php
-        echo $content_for_layout;
-    ?>
-	
 </body>
 </html>
 
