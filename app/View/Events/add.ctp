@@ -5,16 +5,16 @@
 	<fieldset>
 		<legend><?php echo __('Add Event'); ?></legend>
 	<?php
-		echo $this->Form->input('event_name');
-<<<<<<< HEAD
-		echo $this->Form->input('event_description', array('class' => 'txtArea', 'cols' => '2'));
+        
+        
+        echo $this->Form->input('event_name');
+        echo $this->Form->input('event_description', array('class' => 'txtArea', 'cols' => '2'));
 		echo $this->Form->input('eventtype_id');
 		echo $this->Form->input('event_comment', array('class' => 'txtArea', 'cols' => '2'));
-=======
 		echo $this->Form->input('event_description');
 		echo $this->Form->input('eventtype_id', array('label' => 'Event')  );
 		echo $this->Form->input('event_comment');
->>>>>>> Changed the layout for the event view
+
 		echo $this->Form->input('Client');
 		echo $this->Form->input('Timesheet');
 	?>
