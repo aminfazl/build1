@@ -13,13 +13,9 @@
 	<tr>
 		<td><?php echo h($client['Client']['first_name']); ?>&nbsp;</td>
 		<td><?php echo h($client['Client']['gender']); ?>&nbsp;</td>
-<<<<<<< HEAD
-    <td>
-			<?php echo $this->Html->link($client['Clientstatus']['status_name'], array('controller' => 'clientstatuses', 'action' => 'view', $client['Clientstatus']['id'])); ?>
-=======
+
 		<td>
-			<?php echo $this->Html->link($client['status']['id'], array('controller' => 'clientstatuses', 'action' => 'view', $client['Clientstatus']['id'])); ?>
->>>>>>> 22d82c7314cee0cee7500635ed3a14cdafbd3de4
+			<?php echo $this->Html->link($client['Status']['id'], array('controller' => 'clientstatuses', 'action' => 'view', $client['Status']['id'])); ?>
 		</td>
 		<td>
 			<?php echo $this->Html->link($client['Communicationchannel']['communicationchannel_name'], array('controller' => 'communicationchannels', 'action' => 'view', $client['Communicationchannel']['id'])); ?>

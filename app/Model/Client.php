@@ -25,6 +25,8 @@ class Client extends AppModel {
  *
  * @var array
  */
+ 
+ 	
 	public $validate = array(
 		'first_name' => array(
 			'notempty' => array(
@@ -50,38 +52,19 @@ class Client extends AppModel {
 			'date' => array(
 				'rule' => array('date'),
 				//'message' => 'Your custom message here',
-<<<<<<< HEAD
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
+			)
 		),
 		'disability_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
-=======
->>>>>>> 22d82c7314cee0cee7500635ed3a14cdafbd3de4
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-<<<<<<< HEAD
-=======
-		'disability_id' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
->>>>>>> 22d82c7314cee0cee7500635ed3a14cdafbd3de4
+
 		'school_name' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
@@ -146,6 +129,7 @@ class Client extends AppModel {
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
+
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -162,11 +146,8 @@ class Client extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-<<<<<<< HEAD
-		'clientstatus_id' => array(
-=======
+
 		'status_id' => array(
->>>>>>> 22d82c7314cee0cee7500635ed3a14cdafbd3de4
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -238,15 +219,9 @@ class Client extends AppModel {
 			'fields' => '',
 			'order' => ''
 		),
-<<<<<<< HEAD
-		'Clientstatus' => array(
-			'className' => 'Clientstatus',
-			'foreignKey' => 'clientstatus_id',
-=======
 		'Status' => array(
 			'className' => 'Clientstatus',
 			'foreignKey' => 'status_id',
->>>>>>> 22d82c7314cee0cee7500635ed3a14cdafbd3de4
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
