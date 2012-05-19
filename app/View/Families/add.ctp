@@ -3,8 +3,13 @@
 	<fieldset>
 		<legend><?php echo __('Add Family'); ?></legend>
 	<?php
+<<<<<<< HEAD
 		echo $this->Form->input('primarycarer_id');
 		echo $this->Form->input('secondarycarer_id');
+=======
+		echo $this->Form->input('primarycarer_ID');
+		echo $this->Form->input('secondarycarer_ID');
+>>>>>>> 22d82c7314cee0cee7500635ed3a14cdafbd3de4
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit'));?>

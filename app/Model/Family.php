@@ -13,7 +13,11 @@ class Family extends AppModel {
  * @var array
  */
 	public $validate = array(
+<<<<<<< HEAD
 		'primarycarer_id' => array(
+=======
+		'primarycarer_ID' => array(
+>>>>>>> 22d82c7314cee0cee7500635ed3a14cdafbd3de4
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -60,6 +64,7 @@ class Family extends AppModel {
 			'counterQuery' => ''
 		)
 	);
+<<<<<<< HEAD
 	
 	/**
  * belongsTo associations
@@ -84,5 +89,7 @@ class Family extends AppModel {
 	);
 
 
+=======
+>>>>>>> 22d82c7314cee0cee7500635ed3a14cdafbd3de4
 
 }

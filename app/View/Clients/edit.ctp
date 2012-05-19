@@ -3,6 +3,12 @@
 	<fieldset>
 		<legend><?php echo __('Edit Client'); ?></legend>
 	<?php
+<<<<<<< HEAD
+=======
+		echo $this->Form->input('id');
+		echo $this->Form->input('status_id');
+		echo $this->Form->input('communicationchannel_id');
+>>>>>>> 22d82c7314cee0cee7500635ed3a14cdafbd3de4
 		echo $this->Form->input('first_name');
 		echo $this->Form->input('last_name');
 		echo $this->Form->input('gender',array('label' => 'Gender', 'type' => 'select', 'options' => array('M'=>'Male','F'=>'Female')));

@@ -72,7 +72,18 @@
         </ul>
 		</li>
 		<li>
-		<?php Echo $this->Html->Link('VOLUNTEER', '#');?>
+		<?php Echo $this->Html->Link('VOLUNTEER', '/volunteers');?>
+			<ul class="submenu" id="clientsubmenu">
+         <li>
+        <?php Echo $this->Html->Link('Volunteer List', '/volunteers', array('class' => 'button'));?>
+        </li>
+        <li>
+        <?php Echo $this->Html->Link('Statuses list', '/volunteerstatuses', array('class' => 'button'));?>
+        </li>
+        <li>
+        <?php Echo $this->Html->Link('Timesheet', '/Timesheets', array('class' => 'button'));?>
+        </li>
+        </ul>
 		</li>
 		<li>
 		<?php Echo $this->Html->Link('MATCHING', '#');?>

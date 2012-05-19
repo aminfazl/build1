@@ -14,7 +14,11 @@ class ClientsController extends AppController {
  * @return void
  */
 	public function index() {
+<<<<<<< HEAD
 		$this->Client->recursive = 2;
+=======
+		$this->Client->recursive = 0;
+>>>>>>> 22d82c7314cee0cee7500635ed3a14cdafbd3de4
 		$this->set('clients', $this->paginate());
 	}
 
@@ -53,10 +57,17 @@ class ClientsController extends AppController {
 		$religions = $this->Client->Religion->find('list');
 		$birthcountries = $this->Client->Birthcountry->find('list');
 		$communicationchannels = $this->Client->Communicationchannel->find('list');
+<<<<<<< HEAD
 		$clientstatuses = $this->Client->Clientstatus->find('list');
 		$families = $this->Client->Family->find('list');
 		$events = $this->Client->Event->find('list');
 		$this->set(compact('disabilities', 'prioritylevels', 'fundingsources', 'religions', 'birthcountries', 'communicationchannels', 'clientstatuses', 'families', 'events'));
+=======
+		$statuses = $this->Client->Status->find('list');
+		$families = $this->Client->Family->find('list');
+		$events = $this->Client->Event->find('list');
+		$this->set(compact('disabilities', 'prioritylevels', 'fundingsources', 'religions', 'birthcountries', 'communicationchannels', 'statuses', 'families', 'events'));
+>>>>>>> 22d82c7314cee0cee7500635ed3a14cdafbd3de4
 	}
 
 /**
@@ -86,10 +97,17 @@ class ClientsController extends AppController {
 		$religions = $this->Client->Religion->find('list');
 		$birthcountries = $this->Client->Birthcountry->find('list');
 		$communicationchannels = $this->Client->Communicationchannel->find('list');
+<<<<<<< HEAD
 		$clientstatuses = $this->Client->Clientstatus->find('list');
 		$families = $this->Client->Family->find('list');
 		$events = $this->Client->Event->find('list');
 		$this->set(compact('disabilities', 'prioritylevels', 'fundingsources', 'religions', 'birthcountries', 'communicationchannels', 'clientstatuses', 'families', 'events'));
+=======
+		$statuses = $this->Client->Status->find('list');
+		$families = $this->Client->Family->find('list');
+		$events = $this->Client->Event->find('list');
+		$this->set(compact('disabilities', 'prioritylevels', 'fundingsources', 'religions', 'birthcountries', 'communicationchannels', 'statuses', 'families', 'events'));
+>>>>>>> 22d82c7314cee0cee7500635ed3a14cdafbd3de4
 	}
 
 /**

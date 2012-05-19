@@ -50,7 +50,11 @@
 		<th><?php echo __('Dateaccepted'); ?></th>
 		<th><?php echo __('Birthcountry Id'); ?></th>
 		<th><?php echo __('Communicationchannel Id'); ?></th>
+<<<<<<< HEAD
 		<th><?php echo __('Clientstatus Id'); ?></th>
+=======
+		<th><?php echo __('Status Id'); ?></th>
+>>>>>>> 22d82c7314cee0cee7500635ed3a14cdafbd3de4
 		<th><?php echo __('Family Id'); ?></th>
 		<th class="actions"><?php echo __('Actions');?></th>
 	</tr>
@@ -72,7 +76,11 @@
 			<td><?php echo $client['dateaccepted'];?></td>
 			<td><?php echo $client['birthcountry_id'];?></td>
 			<td><?php echo $client['communicationchannel_id'];?></td>
+<<<<<<< HEAD
 			<td><?php echo $client['clientstatus_id'];?></td>
+=======
+			<td><?php echo $client['status_id'];?></td>
+>>>>>>> 22d82c7314cee0cee7500635ed3a14cdafbd3de4
 			<td><?php echo $client['family_id'];?></td>
 			<td class="actions">
 				<?php echo $this->Html->link(__('View'), array('controller' => 'clients', 'action' => 'view', $client['id'])); ?>

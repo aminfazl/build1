@@ -18,7 +18,7 @@ Insert Into Departments(dept_name) Values('Marketing');
 Insert Into Departments(dept_name) Values('Accounting');
 
 Insert Into Employees(first_name, last_name, DOB, gender, hire_date, department_id)
-Values ('Amin', 'Fazl', '1984-09-11', 'M', '2009-08-07', 3);
+Values ('Amin', 'Fazl', '1984-09-11', 'M', '2009-08-01', 3);
 Insert Into Employees(first_name, last_name, DOB, gender, hire_date, department_id)
 Values ('Sanaz', 'Forouzanfar', '1984-09-19', 'M', '2011-11-22', 2);
 Insert Into Employees(first_name, last_name, DOB, gender, hire_date)
