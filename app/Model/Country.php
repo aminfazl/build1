@@ -10,6 +10,8 @@ class Country extends AppModel {
  *
  * @var array
  */
+ 
+ public $displayField = 'country_name';
 	public $validate = array(
 		'country_name' => array(
 			'notempty' => array(
