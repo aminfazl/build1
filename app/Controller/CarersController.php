@@ -47,9 +47,11 @@ class CarersController extends AppController {
 				$this->Session->setFlash(__('The carer could not be saved. Please, try again.'));
 			}
 		}
-		$households = $this->Carer->Household->find('list');
-		$clients = $this->Carer->Client->find('list');
-		$this->set(compact('households', 'clients'));
+		$incomesources = $this->Carer->Incomesource->find('list');
+		$states = $this->Carer->State->find('list');
+		$lgacouncils = $this->Carer->Lgacouncil->find('list');
+		$languages = $this->Carer->Language->find('list');
+		$this->set(compact('incomesources', 'states', 'lgacouncils', 'languages'));
 	}
 
 /**
@@ -73,9 +75,11 @@ class CarersController extends AppController {
 		} else {
 			$this->request->data = $this->Carer->read(null, $id);
 		}
-		$households = $this->Carer->Household->find('list');
-		$clients = $this->Carer->Client->find('list');
-		$this->set(compact('households', 'clients'));
+		$incomesources = $this->Carer->Incomesource->find('list');
+		$states = $this->Carer->State->find('list');
+		$lgacouncils = $this->Carer->Lgacouncil->find('list');
+		$languages = $this->Carer->Language->find('list');
+		$this->set(compact('incomesources', 'states', 'lgacouncils', 'languages'));
 	}
 
 /**
