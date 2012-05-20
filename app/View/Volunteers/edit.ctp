@@ -9,9 +9,9 @@
 		echo $this->Form->input('gender',array('label' => 'Gender', 'type' => 'select', 'options' => array('M'=>'Male','F'=>'Female')));
 		echo $this->Form->input('birth_date',array('dateFormat' => 'DMY','minYear' => date('Y') - 70,'maxYear' => date('Y') -18));
 		echo $this->Form->input('street_address');
-		echo $this->Form->input('suburb');
+		echo $this->Form->input('suburb', array('class' => 'suburb'));
 		echo $this->Form->input('state_id');
-		echo $this->Form->input('postcode');
+		echo $this->Form->input('postcode', array('class' => 'postcode'));
 		echo $this->Form->input('volunteerstatus_id');
 		echo $this->Form->input('communicationchannel_id');
 	?>

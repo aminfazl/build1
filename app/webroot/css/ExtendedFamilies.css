@@ -417,6 +417,14 @@ input, textarea {
 	
 }
 
+.suburb {
+	width:30%;	
+}
+
+.postcode{
+	width:9%;	
+}
+
 select {
 	clear: both;
 	font-size: 120%;
