@@ -53,10 +53,10 @@ class ClientsController extends AppController {
 		$religions = $this->Client->Religion->find('list');
 		$birthcountries = $this->Client->Birthcountry->find('list');
 		$communicationchannels = $this->Client->Communicationchannel->find('list');
-		$clientstatuses = $this->Client->Status->find('list');
+		$statuses = $this->Client->Status->find('list');
 		$families = $this->Client->Family->find('list');
 		$events = $this->Client->Event->find('list');
-		$this->set(compact('disabilities', 'prioritylevels', 'fundingsources', 'religions', 'birthcountries', 'communicationchannels', 'clientstatuses', 'families', 'events'));
+		$this->set(compact('disabilities', 'prioritylevels', 'fundingsources', 'religions', 'birthcountries', 'communicationchannels', 'statuses', 'families', 'events'));
 	}
 
 /**
