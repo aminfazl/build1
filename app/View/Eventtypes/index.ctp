@@ -3,7 +3,7 @@
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 
-			<th><?php echo $this->Paginator->sort('Event Type');?></th>
+			<th><?php echo $this->Paginator->sort('eventtype_name');?></th>
 			<th class="actions"><?php echo __('Actions');?></th>
 	</tr>
 	<?php

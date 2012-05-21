@@ -9,8 +9,11 @@
         
         echo $this->Form->input('event_name');
         echo $this->Form->input('event_description', array('class' => 'txtArea', 'cols' => '2'));
-		echo $this->Form->input('eventtype_id', array('label' => 'Event Type'));
+		echo $this->Form->input('eventtype_id');
 		echo $this->Form->input('event_comment', array('class' => 'txtArea', 'cols' => '2'));
+		echo $this->Form->input('event_description');
+		echo $this->Form->input('eventtype_id', array('label' => 'Event')  );
+		echo $this->Form->input('event_comment');
 
 		echo $this->Form->input('Client');
 		echo $this->Form->input('Timesheet');

@@ -11,8 +11,6 @@ class Eventtype extends AppModel {
  *
  * @var array
  */
- 
- 	public $displayField = 'eventtype_name';
 	public $validate = array(
 		'eventtype_name' => array(
 			'notempty' => array(
