@@ -28,6 +28,7 @@
 		echo $this->Html->meta('icon');
 
 		echo $this->Html->css('ExtendedFamilies');
+		echo $this->Html->script('jquery');
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
@@ -105,6 +106,7 @@
 		</div>
 	</div>
 	<?php echo $this->element('sql_dump'); ?>
+    <?php echo $this->Js->writeBuffer(); // Write cached scripts ?>
 </body>
 </html>
 

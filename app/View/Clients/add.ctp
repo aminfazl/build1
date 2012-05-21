@@ -7,7 +7,8 @@
 		echo $this->Form->input('last_name');
 		echo $this->Form->input('gender',array('label' => 'Gender', 'type' => 'select', 'options' => array('M'=>'Male','F'=>'Female')));
 		echo $this->Form->input('birth_date', array('dateFormat' => 'DMY','minYear' => date('Y') - 50,'maxYear' => date('Y')));
-		echo $this->Form->input('birthcountry_id', array('label'=>'Birth Country'));
+		echo $this->Form->input('birthcountry_id', array('label'=>'Birth Country', 'after'=>$this->Js->link('New', array('controller' => 'countries','action' => 'add' ), array('before'=>$this->Js->get('#AddCountry')->effect('fadeIn')))));
+		echo $this->Html->Div("CountriesForm", "Wait..", array('id'=>'AddCountry'));
 		echo $this->Form->input('status_id', array('label' => 'Client Status'));
 		echo $this->Form->input('communicationchannel_id', array('label' => 'Communication Channel'));
 		echo $this->Form->input('disability_id',  array('label' => 'Disability'));

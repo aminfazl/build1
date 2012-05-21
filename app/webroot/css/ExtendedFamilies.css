@@ -217,6 +217,9 @@ div.actions h3 {
 	color:#777;
 }
 
+#AddCountry{
+	display:none;
+}
 
 /** Tables **/
 table {
