@@ -6,7 +6,7 @@
 		echo $this->Form->input('id');
 		echo $this->Form->input('last_name');
 		echo $this->Form->input('gender');
-		echo $this->Form->input('birth_date');
+		echo $this->Form->input('birth_date', array('dateFormat' => 'DMY','minYear' => date('Y') - 25,'maxYear' => date('Y')));
 		echo $this->Form->input('first_name');
 		echo $this->Form->input('family_id');
 	?>

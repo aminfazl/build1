@@ -18,7 +18,7 @@
 		</dd>
 		<dt><?php echo __('Birth Date'); ?></dt>
 		<dd>
-			<?php echo h($sibling['Sibling']['birth_date']); ?>
+			<?php echo h($sibling['Sibling']['birth_date'], array('dateFormat' => 'DMY')); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('First Name'); ?></dt>

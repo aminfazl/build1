@@ -16,7 +16,7 @@
 		<td><?php echo h($sibling['Sibling']['id']); ?>&nbsp;</td>
 		<td><?php echo h($sibling['Sibling']['last_name']); ?>&nbsp;</td>
 		<td><?php echo h($sibling['Sibling']['gender']); ?>&nbsp;</td>
-		<td><?php echo h($sibling['Sibling']['birth_date']); ?>&nbsp;</td>
+		<td><?php echo h($sibling['Sibling']['birth_date'], array('dateFormat' => 'DMY')); ?>&nbsp;</td>
 		<td><?php echo h($sibling['Sibling']['first_name']); ?>&nbsp;</td>
 		<td>
 			<?php echo $this->Html->link($sibling['Family']['id'], array('controller' => 'families', 'action' => 'view', $sibling['Family']['id'])); ?>
