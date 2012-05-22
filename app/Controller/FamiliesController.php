@@ -47,13 +47,12 @@ class FamiliesController extends AppController {
 				$this->Session->setFlash(__('The family could not be saved. Please, try again.'));
 			}
 		}
-<<<<<<< HEAD
+
 		
 		$primarycarers = $this->Family->Primarycarer->find('list');
 		$secondarycarers = $this->Family->Secondarycarer->find('list');
 		$this->set(compact('primarycarers', 'secondarycarers'));
-=======
->>>>>>> 22d82c7314cee0cee7500635ed3a14cdafbd3de4
+
 	}
 
 /**
@@ -77,13 +76,12 @@ class FamiliesController extends AppController {
 		} else {
 			$this->request->data = $this->Family->read(null, $id);
 		}
-<<<<<<< HEAD
+
 		
 		$primarycarers = $this->Family->Primarycarer->find('list');
 		$secondarycarers = $this->Family->Secondarycarer->find('list');
 		$this->set(compact('primarycarers', 'secondarycarers'));
-=======
->>>>>>> 22d82c7314cee0cee7500635ed3a14cdafbd3de4
+
 	}
 
 /**
