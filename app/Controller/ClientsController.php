@@ -6,7 +6,7 @@ App::uses('AppController', 'Controller');
  * @property Client $Client
  */
 class ClientsController extends AppController {
-
+	
 
 /**
  * index method
