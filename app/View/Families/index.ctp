@@ -3,13 +3,13 @@
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id');?></th>
-<<<<<<< HEAD
+
 			<th><?php echo $this->Paginator->sort('primarycarer_id');?></th>
 			<th><?php echo $this->Paginator->sort('secondarycarer_id');?></th>
-=======
+
 			<th><?php echo $this->Paginator->sort('primarycarer_ID');?></th>
 			<th><?php echo $this->Paginator->sort('secondarycarer_ID');?></th>
->>>>>>> 22d82c7314cee0cee7500635ed3a14cdafbd3de4
+
 			<th class="actions"><?php echo __('Actions');?></th>
 	</tr>
 	<?php

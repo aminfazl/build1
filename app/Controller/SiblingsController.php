@@ -47,9 +47,8 @@ class SiblingsController extends AppController {
 				$this->Session->setFlash(__('The sibling could not be saved. Please, try again.'));
 			}
 		}
-		$households = $this->Sibling->Household->find('list');
-		$clients = $this->Sibling->Client->find('list');
-		$this->set(compact('households', 'clients'));
+		$families = $this->Sibling->Family->find('list');
+		$this->set(compact('families'));
 	}
 
 /**
@@ -73,9 +72,8 @@ class SiblingsController extends AppController {
 		} else {
 			$this->request->data = $this->Sibling->read(null, $id);
 		}
-		$households = $this->Sibling->Household->find('list');
-		$clients = $this->Sibling->Client->find('list');
-		$this->set(compact('households', 'clients'));
+		$families = $this->Sibling->Family->find('list');
+		$this->set(compact('families'));
 	}
 
 /**

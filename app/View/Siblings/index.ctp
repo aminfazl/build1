@@ -2,22 +2,24 @@
 	<h2><?php echo __('Siblings');?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('first_name');?></th>
+			<th><?php echo $this->Paginator->sort('id');?></th>
+			<th><?php echo $this->Paginator->sort('last_name');?></th>
 			<th><?php echo $this->Paginator->sort('gender');?></th>
 			<th><?php echo $this->Paginator->sort('birth_date');?></th>
-			
-			<th><?php echo $this->Paginator->sort('household_id');?></th>
+			<th><?php echo $this->Paginator->sort('first_name');?></th>
+			<th><?php echo $this->Paginator->sort('family_id');?></th>
 			<th class="actions"><?php echo __('Actions');?></th>
 	</tr>
 	<?php
 	foreach ($siblings as $sibling): ?>
 	<tr>
-		<td><?php echo h($sibling['Sibling']['first_name']); ?>&nbsp;</td>
+		<td><?php echo h($sibling['Sibling']['id']); ?>&nbsp;</td>
+		<td><?php echo h($sibling['Sibling']['last_name']); ?>&nbsp;</td>
 		<td><?php echo h($sibling['Sibling']['gender']); ?>&nbsp;</td>
-		<td><?php echo h($sibling['Sibling']['birth_date']); ?>&nbsp;</td> 
-		
+		<td><?php echo h($sibling['Sibling']['birth_date']); ?>&nbsp;</td>
+		<td><?php echo h($sibling['Sibling']['first_name']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($sibling['Household']['street_address'], array('controller' => 'households', 'action' => 'view', $sibling['Household']['id'])); ?>
+			<?php echo $this->Html->link($sibling['Family']['id'], array('controller' => 'families', 'action' => 'view', $sibling['Family']['id'])); ?>
 		</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $sibling['Sibling']['id'])); ?>
@@ -46,5 +48,7 @@
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('New Sibling'), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__('List Families'), array('controller' => 'families', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Family'), array('controller' => 'families', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
