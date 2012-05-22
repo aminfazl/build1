@@ -13,7 +13,5 @@
 	<ul>
 
 		<li><?php echo $this->Html->link(__('List Volunteerstatuses'), array('action' => 'index'));?></li>
-		<li><?php echo $this->Html->link(__('List Volunteers'), array('controller' => 'volunteers', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Volunteer'), array('controller' => 'volunteers', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

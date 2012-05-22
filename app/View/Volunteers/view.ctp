@@ -66,16 +66,6 @@
 		<li><?php echo $this->Form->postLink(__('Delete Volunteer'), array('action' => 'delete', $volunteer['Volunteer']['id']), null, __('Are you sure you want to delete # %s?', $volunteer['Volunteer']['id'])); ?> </li>
 		<li><?php echo $this->Html->link(__('List Volunteers'), array('action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Volunteer'), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Volunteerstatuses'), array('controller' => 'volunteerstatuses', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Volunteerstatus'), array('controller' => 'volunteerstatuses', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Communicationchannels'), array('controller' => 'communicationchannels', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Communicationchannel'), array('controller' => 'communicationchannels', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List States'), array('controller' => 'states', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New State'), array('controller' => 'states', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Timesheets'), array('controller' => 'timesheets', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Timesheet'), array('controller' => 'timesheets', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Volinterestslogs'), array('controller' => 'volinterestslogs', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Volinterestslog'), array('controller' => 'volinterestslogs', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
 <div class="related">

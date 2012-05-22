@@ -20,8 +20,6 @@
 		<li><?php echo $this->Form->postLink(__('Delete Volunteerstatus'), array('action' => 'delete', $volunteerstatus['Volunteerstatus']['id']), null, __('Are you sure you want to delete # %s?', $volunteerstatus['Volunteerstatus']['id'])); ?> </li>
 		<li><?php echo $this->Html->link(__('List Volunteerstatuses'), array('action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Volunteerstatus'), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Volunteers'), array('controller' => 'volunteers', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Volunteer'), array('controller' => 'volunteers', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
 <div class="related">
