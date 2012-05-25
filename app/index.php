@@ -13,6 +13,5 @@
  * @package       app
  * @since         CakePHP(tm) v 0.10.0.1076
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
- *
  */
 require 'webroot' . DIRECTORY_SEPARATOR . 'index.php';
