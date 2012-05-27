@@ -2,6 +2,7 @@
 <?php echo $this->Form->create('Client');?>
 	<fieldset>
 		<legend><?php echo __('Add Client'); ?></legend>
+                
 	<?php
 		echo $this->Form->input('first_name');
 		echo $this->Form->input('last_name');
@@ -19,6 +20,7 @@
 		echo $this->Form->input('religion_id',  array('label' => 'Religion'));
 		echo $this->Form->input('dateaccepted', array('label' => 'Date Accepted','dateFormat' => 'DMY','minYear' => date('Y') - 25,'maxYear' => date('Y')));
 		echo $this->Form->input('family_id',  array('label' => 'Family'));
+                
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit'));?>
