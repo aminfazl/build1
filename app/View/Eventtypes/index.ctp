@@ -9,7 +9,6 @@
 	<?php
 	foreach ($eventtypes as $eventtype): ?>
 	<tr>
-		<td><?php echo h($eventtype['Eventtype']['id']); ?>&nbsp;</td>
 		<td><?php echo h($eventtype['Eventtype']['eventtype_name']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $eventtype['Eventtype']['id'])); ?>
