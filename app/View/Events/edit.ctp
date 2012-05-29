@@ -8,6 +8,8 @@
 		echo $this->Form->input('event_description');
 		echo $this->Form->input('eventtype_id');
 		echo $this->Form->input('event_comment');
+		echo $this->Form->input('event_date');
+		echo $this->Form->input('venue_id');
 		echo $this->Form->input('Client');
 		echo $this->Form->input('Timesheet');
 	?>
@@ -22,6 +24,8 @@
 		<li><?php echo $this->Html->link(__('List Events'), array('action' => 'index'));?></li>
 		<li><?php echo $this->Html->link(__('List Eventtypes'), array('controller' => 'eventtypes', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Eventtype'), array('controller' => 'eventtypes', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Eventvenues'), array('controller' => 'eventvenues', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Venue'), array('controller' => 'eventvenues', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Clients'), array('controller' => 'clients', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Client'), array('controller' => 'clients', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Timesheets'), array('controller' => 'timesheets', 'action' => 'index')); ?> </li>

@@ -47,6 +47,11 @@ class CountriesController extends AppController {
 				$this->Session->setFlash(__('The country could not be saved. Please, try again.'));
 			}
 		}
+		
+		else 
+		{
+			$this->render('ajax_add', 'ajax');
+		}
 	}
 
 /**

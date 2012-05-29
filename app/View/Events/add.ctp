@@ -1,19 +1,15 @@
 <div class="events form">
-
-
 <?php echo $this->Form->create('Event');?>
 	<fieldset>
 		<legend><?php echo __('Add Event'); ?></legend>
 	<?php
-        
-        
-        echo $this->Form->input('event_name');
-        echo $this->Form->input('event_description', array('class' => 'txtArea', 'cols' => '2'));
+		echo $this->Form->input('event_name');
+		echo $this->Form->input('event_description', array('class' => 'txtArea', 'cols' => '2'));
 		echo $this->Form->input('eventtype_id', array('label' => 'Event Type'));
 		echo $this->Form->input('event_comment', array('class' => 'txtArea', 'cols' => '2'));
-
-		echo $this->Form->input('Client');
-		echo $this->Form->input('Timesheet');
+		echo $this->Form->input('event_date');
+		echo $this->Form->input('venue_id');
+		
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit'));?>

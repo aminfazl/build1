@@ -6,7 +6,7 @@
 		echo $this->Form->input('first_name');
 		echo $this->Form->input('last_name');
 		echo $this->Form->input('gender',array('label' => 'Gender', 'type' => 'select', 'options' => array('M'=>'Male','F'=>'Female')));
-		echo $this->Form->input('birth_date', array('dateFormat' => 'DMY','minYear' => date('Y') - 25,'maxYear' => date('Y')));
+		echo $this->Form->input('birth_date', array('dateFormat' => 'DMY','minYear' => date('Y') - 50,'maxYear' => date('Y')));
 		echo $this->Form->input('birthcountry_id', array('label'=>'Birth Country'));
 		echo $this->Form->input('status_id', array('label' => 'Client Status'));
 		echo $this->Form->input('communicationchannel_id', array('label' => 'Communication Channel'));
@@ -16,7 +16,7 @@
 		echo $this->Form->input('prioritylevel_id',  array('label' => 'Priority Level'));
 		echo $this->Form->input('fundingsource_id',  array('label' => 'Funding Source'));
 		echo $this->Form->input('religion_id',  array('label' => 'Religion'));
-		echo $this->Form->input('dateaccepted', array('label' => 'Date Accepted','dateFormat' => 'DMY','minYear' => date('Y') - 25,'maxYear' => date('Y')));
+		echo $this->Form->input('dateaccepted', array('label' => 'Date Accepted','dateFormat' => 'DMY','minYear' => date('Y') - 50,'maxYear' => date('Y')));
 		echo $this->Form->input('family_id',  array('label' => 'Family'));
 	?>
 	</fieldset>

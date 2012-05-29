@@ -4,6 +4,7 @@ App::uses('AppModel', 'Model');
  * Event Model
  *
  * @property Eventtype $Eventtype
+ * @property Venue $Venue
  * @property Client $Client
  * @property Timesheet $Timesheet
  */
@@ -54,6 +55,26 @@ class Event extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
+		'event_date' => array(
+			'date' => array(
+				'rule' => array('date'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'venue_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
 	);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
@@ -67,6 +88,13 @@ class Event extends AppModel {
 		'Eventtype' => array(
 			'className' => 'Eventtype',
 			'foreignKey' => 'eventtype_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
+		'Venue' => array(
+			'className' => 'Eventvenue',
+			'foreignKey' => 'venue_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

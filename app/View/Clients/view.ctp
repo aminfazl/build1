@@ -21,7 +21,7 @@
 			<?php echo h($client['Client']['last_name']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Birth Date', array('dateFormat' => 'DMY')); ?></dt>
+		<dt><?php echo __('Birth Date'); ?></dt>
 		<dd>
 			<?php echo h($client['Client']['birth_date']); ?>
 			&nbsp;
@@ -56,7 +56,7 @@
 			<?php echo $this->Html->link($client['Religion']['id'], array('controller' => 'religions', 'action' => 'view', $client['Religion']['id'])); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Dateaccepted', array('dateFormat' => 'DMY')); ?></dt>
+		<dt><?php echo __('Dateaccepted'); ?></dt>
 		<dd>
 			<?php echo h($client['Client']['dateaccepted']); ?>
 			&nbsp;

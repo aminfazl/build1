@@ -48,9 +48,10 @@ class EventsController extends AppController {
 			}
 		}
 		$eventtypes = $this->Event->Eventtype->find('list');
+		$venues = $this->Event->Venue->find('list');
 		$clients = $this->Event->Client->find('list');
 		$timesheets = $this->Event->Timesheet->find('list');
-		$this->set(compact('eventtypes', 'clients', 'timesheets'));
+		$this->set(compact('eventtypes', 'venues', 'clients', 'timesheets'));
 	}
 
 /**
@@ -75,9 +76,10 @@ class EventsController extends AppController {
 			$this->request->data = $this->Event->read(null, $id);
 		}
 		$eventtypes = $this->Event->Eventtype->find('list');
+		$venues = $this->Event->Venue->find('list');
 		$clients = $this->Event->Client->find('list');
 		$timesheets = $this->Event->Timesheet->find('list');
-		$this->set(compact('eventtypes', 'clients', 'timesheets'));
+		$this->set(compact('eventtypes', 'venues', 'clients', 'timesheets'));
 	}
 
 /**

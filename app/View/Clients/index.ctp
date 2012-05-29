@@ -4,9 +4,9 @@
 	<tr>
 			<th><?php echo $this->Paginator->sort('first_name', 'Client Name');?></th>
 			<th><?php echo $this->Paginator->sort('gender','Gender');?></th>
-      		<th><?php echo $this->Paginator->sort('clientstatus_id', 'Client Status');?></th>
+      <th><?php echo $this->Paginator->sort('clientstatus_id', 'Client Status');?></th>
 			<th><?php echo $this->Paginator->sort('communicationchannel_id', 'Communication Channel');?></th>
-			<th class="actions"><?php echo __('Actions');?></th>
+				<th class="actions"><?php echo __('Actions');?></th>
 	</tr>
 	<?php
 	foreach ($clients as $client): ?>

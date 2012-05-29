@@ -64,7 +64,6 @@ class Family extends AppModel {
 			'counterQuery' => ''
 		)
 	);
-
 	
 	/**
  * belongsTo associations
@@ -87,7 +86,6 @@ class Family extends AppModel {
 			'order' => ''
 		)
 	);
-
 
 
 

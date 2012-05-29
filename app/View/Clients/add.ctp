@@ -2,14 +2,27 @@
 <?php echo $this->Form->create('Client');?>
 	<fieldset>
 		<legend><?php echo __('Add Client'); ?></legend>
-                
 	<?php
 		echo $this->Form->input('first_name');
 		echo $this->Form->input('last_name');
 		echo $this->Form->input('gender',array('label' => 'Gender', 'type' => 'select', 'options' => array('M'=>'Male','F'=>'Female')));
-		echo $this->Form->input('birth_date', array('dateFormat' => 'DMY','minYear' => date('Y') - 25,'maxYear' => date('Y')));
-		echo $this->Form->input('birthcountry_id', array('label'=>'Birth Country', 'after'=>$this->Js->link('New', array('controller' => 'countries','action' => 'add' ), array('before'=>$this->Js->get('#AddCountry')->effect('fadeIn')))));
-		echo $this->Html->Div("CountriesForm", "Wait..", array('id'=>'AddCountry'));
+		echo $this->Form->input('birth_date', array('dateFormat' => 'DMY','minYear' => date('Y') - 50,'maxYear' => date('Y')));
+		echo $this->Form->input('birthcountry_id', array('label'=>'Birth Country', 'after'=>$this->Js->link('New', array('controller'=>'countries', 'action'=>'add' ), array('class'=>'linkNew' ))));?>
+        <div class="ajaxForm" id="countryForm">
+        	<div class="Inputs" id="countryInputs">
+            </div>
+        <fieldset>
+	<div class="submits">
+    <?php 
+	echo $this->Js->Link('Submit', array('action'=>'add', 'controller'=>'countries'), array('class'=>'linkSubmit' ));
+	echo $this->Js->Link('Cancel', array('action'=>'add', 'controller'=>'countries'), array('class'=>'linkCancel' ));
+	?>
+	</div>
+	</fieldset>
+<?php echo $this->Form->end();?>
+
+        </div>
+        <?php
 		echo $this->Form->input('status_id', array('label' => 'Client Status'));
 		echo $this->Form->input('communicationchannel_id', array('label' => 'Communication Channel'));
 		echo $this->Form->input('disability_id',  array('label' => 'Disability'));
@@ -18,9 +31,8 @@
 		echo $this->Form->input('prioritylevel_id',  array('label' => 'Priority Level'));
 		echo $this->Form->input('fundingsource_id',  array('label' => 'Funding Source'));
 		echo $this->Form->input('religion_id',  array('label' => 'Religion'));
-		echo $this->Form->input('dateaccepted', array('label' => 'Date Accepted','dateFormat' => 'DMY','minYear' => date('Y') - 25,'maxYear' => date('Y')));
+		echo $this->Form->input('dateaccepted', array('label' => 'Date Accepted','dateFormat' => 'DMY','minYear' => date('Y') - 50,'maxYear' => date('Y')));
 		echo $this->Form->input('family_id',  array('label' => 'Family'));
-                
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit'));?>

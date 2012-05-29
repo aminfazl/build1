@@ -29,6 +29,7 @@
 
 		echo $this->Html->css('ExtendedFamilies');
 		echo $this->Html->script('jquery');
+		echo $this->Html->script('efa');
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
@@ -49,9 +50,6 @@
 		<li>
 		<?php Echo $this->Html->Link('CLIENT', '/clients');?>
         <ul class="submenu" id="clientsubmenu">
-        <li>
-        <?php Echo $this->Html->Link('Household List', '/households', array('class' => 'button'));?>
-        </li>
          <li>
         <?php Echo $this->Html->Link('Client List', '/clients', array('class' => 'button'));?>
         </li>
@@ -70,11 +68,23 @@
         <li>
         <?php Echo $this->Html->Link('Communication List', '/communicationchannels', array('class' => 'button'));?>
         </li>
+        <li>
+        <?php Echo $this->Html->Link('Income Source List', '/incomesources', array('class' => 'button'));?>
+        </li>
+        <li>
+        <?php Echo $this->Html->Link('LGA List', '/lgacouncils', array('class' => 'button'));?>
+        </li>
+        <li>
+        <?php Echo $this->Html->Link('EFA Regions List', '/efaregions', array('class' => 'button'));?>
+        </li>
+        <li>
+        <?php Echo $this->Html->Link('DHS Regions List', '/dhsregions', array('class' => 'button'));?>
+        </li>
         </ul>
 		</li>
 		<li>
 		<?php Echo $this->Html->Link('VOLUNTEER', '/volunteers');?>
-			<ul class="submenu" id="clientsubmenu">
+		<ul class="submenu" id="volunteersubmenu">
          <li>
         <?php Echo $this->Html->Link('Volunteer List', '/volunteers', array('class' => 'button'));?>
         </li>
@@ -90,7 +100,17 @@
 		<?php Echo $this->Html->Link('MATCHING', '#');?>
 		</li>
 		<li>
-		<?php Echo $this->Html->Link('EVENT', '#');?>
+		<?php Echo $this->Html->Link('EVENT', '/Events');?>
+        <ul class="submenu" id="eventsubmenu">
+         <li>
+        <?php Echo $this->Html->Link('Event List', '/Events', array('class' => 'button'));?>
+        </li>
+        <li>
+        <?php Echo $this->Html->Link('Event Type List', '/EventTypes', array('class' => 'button'));?>
+        </li>
+        <li>
+        <?php Echo $this->Html->Link('Event Venue List', '/Eventvenues', array('class' => 'button'));?>
+        </li>
 		</li>
 		</ul>
 		</div>
