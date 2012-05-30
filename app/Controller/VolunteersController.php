@@ -6,6 +6,9 @@ App::uses('AppController', 'Controller');
  * @property Volunteer $Volunteer
  */
 class VolunteersController extends AppController {
+	
+	 var $name = 'Volunteers';
+    var $components = array('Filter');
 
 
 /**
@@ -15,7 +18,14 @@ class VolunteersController extends AppController {
  */
 	public function index() {
 		$this->Volunteer->recursive = 0;
-		$this->set('volunteers', $this->paginate());
+		       $filter = $this->Filter->process($this);
+		//$this->set('events', $this->paginate(null, $this->data));
+		if($this->request->is('post')){
+			$this->set('volunteers', $this->paginate(null, array("Volunteer.first_name like '%".$this->data['Volunteer']['first_name']."%'")));
+		}
+		else{
+			$this->set('volunteers', $this->paginate(null));
+		}
 	}
 
 /**
