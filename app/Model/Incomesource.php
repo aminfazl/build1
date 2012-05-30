@@ -11,6 +11,9 @@ class Incomesource extends AppModel {
  *
  * @var array
  */
+ 
+ var $displayField = 'incomesource_name';
+
 	public $validate = array(
 		'incomesource_name' => array(
 			'notempty' => array(

@@ -11,6 +11,9 @@ class Prioritylevel extends AppModel {
  *
  * @var array
  */
+ 
+ var $displayField = 'prioritylevel_name';
+
 	public $validate = array(
 		'prioritylevel_name' => array(
 			'notempty' => array(

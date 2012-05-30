@@ -13,6 +13,9 @@ class Lgacouncil extends AppModel {
  *
  * @var array
  */
+ 
+ var $displayField = 'lgacouncil_name';
+
 	public $validate = array(
 		'lgacouncil_name' => array(
 			'notempty' => array(

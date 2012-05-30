@@ -14,6 +14,9 @@ class Carer extends AppModel {
  *
  * @var array
  */
+ 
+ var $displayField = 'first_name';
+
 	public $validate = array(
 		'last_name' => array(
 			'notempty' => array(

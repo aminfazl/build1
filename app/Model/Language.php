@@ -11,6 +11,9 @@ class Language extends AppModel {
  *
  * @var array
  */
+ 
+ var $displayField = 'language_name';
+
 	public $validate = array(
 		'language_name' => array(
 			'notempty' => array(

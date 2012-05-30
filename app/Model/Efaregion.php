@@ -11,6 +11,8 @@ class Efaregion extends AppModel {
  *
  * @var array
  */
+ public $displayField = 'efaregion_name';
+
 	public $validate = array(
 		'efaregion_name' => array(
 			'notempty' => array(

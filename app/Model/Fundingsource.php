@@ -11,6 +11,9 @@ class Fundingsource extends AppModel {
  *
  * @var array
  */
+ 
+ var $displayField = 'fundingsource_name';
+
 	public $validate = array(
 		'fundingsource_name' => array(
 			'notempty' => array(

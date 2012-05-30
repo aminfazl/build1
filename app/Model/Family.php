@@ -14,7 +14,7 @@ class Family extends AppModel {
  */
 	public $validate = array(
 
-		'primarycarer_id' => array(
+		
 
 		'primarycarer_ID' => array(
 
@@ -27,7 +27,7 @@ class Family extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-	));
+	);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 

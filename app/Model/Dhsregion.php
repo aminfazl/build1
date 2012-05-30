@@ -11,6 +11,8 @@ class Dhsregion extends AppModel {
  *
  * @var array
  */
+ var $displayField = 'dhsregion_name';
+
 	public $validate = array(
 		'dhsregion_name' => array(
 			'notempty' => array(

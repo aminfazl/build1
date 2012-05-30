@@ -11,6 +11,9 @@ class Religion extends AppModel {
  *
  * @var array
  */
+ 
+ var $displayField = 'religion_name';
+
 	public $validate = array(
 		'religion_name' => array(
 			'notempty' => array(
