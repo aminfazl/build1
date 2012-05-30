@@ -104,7 +104,7 @@ class FilterComponent extends Component {
             foreach($controller->data as $model=>$fields){
                 foreach($fields as $key=>$field){
                     if($field == ''){
-                       unset($controller->data[$model][$key]);
+                     //  unset($controller->data[$model][$key]);
                     }
                 }
             }

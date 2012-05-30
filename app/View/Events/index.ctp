@@ -1,9 +1,9 @@
 <div class="events index">
-    
+   <h3><?php echo __('Search Events');?></h3> 
     <?php
 echo $this->Form->create('Event', array('action'=>'/index'));
 ?><fieldset><legend><?php __('Filter');?></legend><?
-echo $this -> Form->input('event_name');
+echo $this -> Form->input('event_name', array('label' => 'Events name'));
 //echo $this -> Form->input('event_description');
 ?></fieldset><?
 echo $this -> Form->end('Search');

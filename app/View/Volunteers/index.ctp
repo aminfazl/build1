@@ -1,9 +1,10 @@
 <div class="volunteers index">
 
- <?php
+<h3><?php echo __('Search Volunteers');?></h3>
+ <?php 
 echo $this->Form->create('Volunteer', array('action'=>'/index'));
 ?><fieldset><legend><?php __('Filter');?></legend><?
-echo $this -> Form->input('first_name');
+echo $this -> Form->input('first_name', array('label' => 'Volunteer name'));
 //echo $this -> Form->input('event_description');
 ?></fieldset><?
 echo $this -> Form->end('Search');
