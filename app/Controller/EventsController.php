@@ -7,6 +7,11 @@ App::uses('AppController', 'Controller');
  */
 class EventsController extends AppController {
 
+    
+
+    var $name = 'Events';
+    var $components = array('Filter');
+	
 
 /**
  * index method
@@ -15,7 +20,14 @@ class EventsController extends AppController {
  */
 	public function index() {
 		$this->Event->recursive = 0;
-		$this->set('events', $this->paginate());
+        $filter = $this->Filter->process($this);
+		//$this->set('events', $this->paginate(null, $this->data));
+		if($this->request->is('post')){
+			$this->set('events', $this->paginate(null, array("Event.event_name like '%".$this->data['Event']['event_name']."%'")));
+		}
+		else{
+			$this->set('events', $this->paginate(null));
+		}
 	}
 
 /**

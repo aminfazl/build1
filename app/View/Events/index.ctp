@@ -1,4 +1,14 @@
 <div class="events index">
+    
+    <?php
+echo $this->Form->create('Event', array('action'=>'/index'));
+?><fieldset><legend><?php __('Filter');?></legend><?
+echo $this -> Form->input('event_name');
+//echo $this -> Form->input('event_description');
+?></fieldset><?
+echo $this -> Form->end('Search');
+?>
+    
 	<h2><?php echo __('Events');?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>

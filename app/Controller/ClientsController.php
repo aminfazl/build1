@@ -7,6 +7,10 @@ App::uses('AppController', 'Controller');
  */
 class ClientsController extends AppController {
 	
+    
+     var $name = 'Clients';
+    var $components = array('Filter');
+	
 
 /**
  * index method
@@ -15,7 +19,14 @@ class ClientsController extends AppController {
  */
 	public function index() {
 		$this->Client->recursive = 2;
-		$this->set('clients', $this->paginate());
+                $filter = $this->Filter->process($this);
+		//$this->set('events', $this->paginate(null, $this->data));
+		if($this->request->is('post')){
+			$this->set('clients', $this->paginate(null, array("Clients.first_name like '%".$this->data['clients']['first_name']."%'")));
+		}
+		else{
+			$this->set('clients', $this->paginate(null));
+		}
 	}
 
 /**
@@ -47,7 +58,7 @@ class ClientsController extends AppController {
 				$this->Session->setFlash(__('The client could not be saved. Please, try again.'));
 			}
 		}
-		$disabilities = $this->Client->Disability->find('list');
+            	$disabilities = $this->Client->Disability->find('list');
 		$prioritylevels = $this->Client->Prioritylevel->find('list');
 		$fundingsources = $this->Client->Fundingsource->find('list');
 		$religions = $this->Client->Religion->find('list');

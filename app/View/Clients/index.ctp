@@ -1,4 +1,15 @@
 <div class="clients index">
+        <?php
+echo $this->Form->create('Clients', array('action'=>'/index'));
+?><fieldset><legend><?php __('Filter');?></legend><?
+echo $this -> Form->input('first_name');
+//echo $this -> Form->input('event_description');
+?></fieldset><?
+echo $this -> Form->end('Search');
+?>
+    
+    
+    
 	<h2><?php echo __('Clients');?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>

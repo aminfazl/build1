@@ -26,7 +26,7 @@
 			<?php echo h($event['Event']['event_comment']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Event Date'); ?></dt>
+        <dt><?php echo __('Event Date'); ?></dt>
 		<dd>
 			<?php echo h($event['Event']['event_date']); ?>
 			&nbsp;
@@ -47,8 +47,6 @@
 		<li><?php echo $this->Html->link(__('New Event'), array('action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Eventtypes'), array('controller' => 'eventtypes', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Eventtype'), array('controller' => 'eventtypes', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Eventvenues'), array('controller' => 'eventvenues', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Venue'), array('controller' => 'eventvenues', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Clients'), array('controller' => 'clients', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Client'), array('controller' => 'clients', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Timesheets'), array('controller' => 'timesheets', 'action' => 'index')); ?> </li>

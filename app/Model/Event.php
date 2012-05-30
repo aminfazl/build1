@@ -4,11 +4,11 @@ App::uses('AppModel', 'Model');
  * Event Model
  *
  * @property Eventtype $Eventtype
- * @property Venue $Venue
  * @property Client $Client
  * @property Timesheet $Timesheet
  */
 class Event extends AppModel {
+var $displayField = 'event_name';
 /**
  * Validation rules
  *
@@ -48,16 +48,6 @@ class Event extends AppModel {
 		'event_comment' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'event_date' => array(
-			'date' => array(
-				'rule' => array('date'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
