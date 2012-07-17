@@ -3,10 +3,11 @@
 	<fieldset>
 		<legend><?php echo __('Add Matching'); ?></legend>
 	<?php
+		//var $end_date => 'date';
 		echo $this->Form->input('volunteer_id');
 		echo $this->Form->input('client_id');
-		echo $this->Form->input('fromdate');
-		echo $this->Form->input('todate');
+		echo $this->Form->input('fromdate',array('dateFormat' => 'DMY','minYear' => date('Y') - 10,'maxYear' => date('Y')));
+		echo $this->Form->input('todate',array('selected' => strtotime("+24 hours",mktime()),'dateFormat' => 'DMY'));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit'));?>

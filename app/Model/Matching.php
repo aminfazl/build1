@@ -12,6 +12,9 @@ class Matching extends AppModel {
  *
  * @var array
  */
+ 
+ var $end_date = 'date';
+  
 	public $validate = array(
 		'volunteer_id' => array(
 			'numeric' => array(
