@@ -7,7 +7,7 @@
 		echo $this->Form->input('volunteer_id');
 		echo $this->Form->input('client_id');
 		echo $this->Form->input('fromdate',array('dateFormat' => 'DMY','minYear' => date('Y') - 10,'maxYear' => date('Y')));
-		echo $this->Form->input('todate',array('selected' => strtotime("+24 hours",mktime()),'dateFormat' => 'DMY'));
+		echo $this->Form->input('todate',array('selected' => strtotime("+24 hours",mktime()),'dateFormat' => 'DMY', 'minYear' => date('Y'), 'maxYear' => date('Y')+10));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit'));?>
