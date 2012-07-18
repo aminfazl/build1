@@ -9,13 +9,16 @@ App::uses('AppModel', 'Model');
  * @property Language $Language
  */
 class Carer extends AppModel {
+public $displayField = "full_name";
 /**
  * Validation rules
  *
  * @var array
  */
  
- var $displayField = 'first_name';
+    var $virtualFields = array(
+    'full_name' => 'CONCAT(first_name, ",", last_name, ",", street_address, ",", suburb)'
+    );
 
 	public $validate = array(
 		'last_name' => array(
@@ -157,4 +160,36 @@ class Carer extends AppModel {
 			'order' => ''
 		)
 	);
+	
+	public $hasMany = array(
+		'Family_Primary' => array(
+			'className' => 'Family',
+			'foreignKey' => 'primarycarer_ID',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
+		
+		'Family_Secondary' => array(
+			'className' => 'Family',
+			'foreignKey' => 'secondarycarer_ID',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
+	);
+	
+	
 }

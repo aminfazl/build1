@@ -20,12 +20,15 @@ App::uses('AppModel', 'Model');
  * @property Event $Event
  */
 class Client extends AppModel {
+	
+	public $displayField = 'first_name';
+	public $recursive = 2;
+
 /**
  * Validation rules
  *
  * @var array
  */
- 
  	
 	public $validate = array(
 		'first_name' => array(
@@ -219,7 +222,7 @@ class Client extends AppModel {
 			'fields' => '',
 			'order' => ''
 		),
-		'Status' => array(
+		'Clientstatus' => array(
 			'className' => 'Clientstatus',
 			'foreignKey' => 'status_id',
 			'conditions' => '',

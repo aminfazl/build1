@@ -47,7 +47,7 @@ class ActivitytypesController extends AppController {
 				$this->Session->setFlash(__('The activitytype could not be saved. Please, try again.'));
 			}
 		}
-		$activitytypes = $this->Activitytype->Activitytype->find('list');
+		$activitytypes = $this->Activitytype->find('list');
 		$this->set(compact('activitytypes'));
 	}
 
@@ -72,7 +72,7 @@ class ActivitytypesController extends AppController {
 		} else {
 			$this->request->data = $this->Activitytype->read(null, $id);
 		}
-		$activitytypes = $this->Activitytype->Activitytype->find('list');
+		$activitytypes = $this->Activitytype->find('list');
 		$this->set(compact('activitytypes'));
 	}
 

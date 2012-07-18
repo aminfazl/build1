@@ -15,7 +15,6 @@ class Family extends AppModel {
 	public $validate = array(
 
 		
-
 		'primarycarer_ID' => array(
 
 			'numeric' => array(
@@ -26,8 +25,8 @@ class Family extends AppModel {
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
-		),
-	);
+		
+	));
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
@@ -73,20 +72,21 @@ class Family extends AppModel {
 	public $belongsTo = array(
 		'Primarycarer' => array(
 			'className' => 'Carer',
-			'foreignKey' => 'primarycarer_id',
+			'foreignKey' => 'primarycarer_ID',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		),
 		'Secondarycarer' => array(
 			'className' => 'Carer',
-			'foreignKey' => 'secondarycarer_id',
+			'foreignKey' => 'secondarycarer_ID',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		)
 	);
-
+	
+	
 
 
 }

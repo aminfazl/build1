@@ -14,7 +14,7 @@ class TimesheetsController extends AppController {
  * @return void
  */
 	public function index() {
-		$this->Timesheet->recursive = 0;
+		$this->Timesheet->recursive = 2;
 		$this->set('timesheets', $this->paginate());
 	}
 

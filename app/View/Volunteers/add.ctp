@@ -1,4 +1,4 @@
-<div class="volunteers form">
+<div id="addForm" class="volunteers form">
 <?php echo $this->Form->create('Volunteer');?>
 	<fieldset>
 		<legend><?php echo __('Add Volunteer'); ?></legend>
@@ -11,9 +11,24 @@
 		echo $this->Form->input('suburb', array('class' => 'suburb'));
 		echo $this->Form->input('state_id');
 		echo $this->Form->input('postcode', array('class' => 'postcode'));
-		echo $this->Form->input('volunteerstatus_id');
-		echo $this->Form->input('communicationchannel_id');
+        
+		echo $this->Form->input('volunteerstatus_id', array('label' => 'Volunteer Status'));?>
+		<?php
+		echo $this->Form->input('communicationchannel_id', array('label' => 'Communication Channel', 'after'=>$this->Js->link('New', array('controller'=>'Communicationchannels', 'action'=>'add' ), array('class'=>'newChannel' ))));?>
+        <div class="channelForm" id="chanelForm">
+        	<div class="channelInputs" id="chanelInputs">
+            </div>
+        <fieldset>
+	<div class="submits">
+    <?php 
+	echo $this->Js->Link('Submit', array('action'=>'add', 'controller'=>'Communicationchannels'), array('class'=>'channelSubmit'));
+	echo ' ';
+	echo $this->Js->Link('Cancel', array('action'=>'add', 'controller'=>'Communicationchannels'), array('class'=>'channelCancel' ));
 	?>
+	</div>
+	</fieldset>
+	</div>
+	
 	</fieldset>
 <?php echo $this->Form->end(__('Submit'));?>
 </div>

@@ -38,7 +38,7 @@ class VolunteerstatusesController extends AppController {
  * @return void
  */
 	public function add() {
-		if ($this->request->is('post')) {
+		/*if ($this->request->is('post')) {
 			$this->Volunteerstatus->create();
 			if ($this->Volunteerstatus->save($this->request->data)) {
 				$this->Session->setFlash(__('The volunteerstatus has been saved'));
@@ -46,6 +46,37 @@ class VolunteerstatusesController extends AppController {
 			} else {
 				$this->Session->setFlash(__('The volunteerstatus could not be saved. Please, try again.'));
 			}
+		}*/
+		
+		if ($this->request->is('post')) {
+			$this->Volunteerstatus->create();
+			if ($this->Volunteerstatus->save($this->request->data)) {
+				if($this->request->isAjax())
+				{
+					echo $this->Volunteerstatus->getLastInsertID();
+					$this->autoRender = false;
+				}
+				
+				else
+				{
+					$this->Session->setFlash(__('The volunteerstatus has been saved'));
+					$this->redirect(array('action' => 'index'));
+				}
+			} else {
+				if($this->request->isAjax())
+				{
+					echo 0;
+					$this->autoRender(false);
+					exit();
+				}
+				else	
+					$this->Session->setFlash(__('The volunteerstatus could not be saved. Please, try again.'));
+			}
+		}
+		
+		else if($this->request->isAjax())
+		{
+			$this->render('ajax_add', 'ajax');
 		}
 	}
 

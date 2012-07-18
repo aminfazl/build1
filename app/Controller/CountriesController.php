@@ -41,14 +41,30 @@ class CountriesController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Country->create();
 			if ($this->Country->save($this->request->data)) {
-				$this->Session->setFlash(__('The country has been saved'));
-				$this->redirect(array('action' => 'index'));
+				if($this->request->isAjax())
+				{
+					echo $this->Country->getLastInsertID();
+					$this->autoRender = false;
+				}
+				
+				else
+				{
+					$this->Session->setFlash(__('The country has been saved'));
+					$this->redirect(array('action' => 'index'));
+				}
 			} else {
-				$this->Session->setFlash(__('The country could not be saved. Please, try again.'));
+				if($this->request->isAjax())
+				{
+					echo 0;
+					$this->autoRender(false);
+					exit();
+				}
+				else	
+					$this->Session->setFlash(__('The country could not be saved. Please, try again.'));
 			}
 		}
 		
-		else 
+		else if($this->request->isAjax())
 		{
 			$this->render('ajax_add', 'ajax');
 		}

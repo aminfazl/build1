@@ -2,10 +2,10 @@
    <h3><?php echo __('Search Events');?></h3> 
     <?php
 echo $this->Form->create('Event', array('action'=>'/index'));
-?><fieldset><legend><?php __('Filter');?></legend><?
+?><fieldset><legend><?php __('Filter');?></legend><?php
 echo $this -> Form->input('event_name', array('label' => 'Events name'));
 //echo $this -> Form->input('event_description');
-?></fieldset><?
+?></fieldset><?php
 echo $this -> Form->end('Search');
 ?>
     
@@ -29,6 +29,8 @@ echo $this -> Form->end('Search');
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $event['Event']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $event['Event']['id'])); ?>
 			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $event['Event']['id']), null, __('Are you sure you want to delete # %s?', $event['Event']['id'])); ?>
+       <?php echo $this->Html->link(__('Book volunteers'), array('controller' => 'eventsvolunteers','action' => 'index', $event['Event']['id'])); ?>
+        <?php echo $this->Html->link(__('Book clients'), array('controller' => 'eventsclients', 'action' => 'index', $event['Event']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

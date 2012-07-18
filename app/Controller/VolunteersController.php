@@ -22,17 +22,8 @@ class VolunteersController extends AppController {
 		       $filter = $this->Filter->process($this);
 		
 		if($this->request->is('post'))
-		{//count whether first name have results
-			$counted = count($this->paginate(array("Volunteer.first_name like '%".$this->data['Volunteer']['first_name']."%'")));
-		
-			if($counted != 0) //if first name has results
-			{
-				$this->set('volunteers', $this->paginate(array("Volunteer.first_name like '%".$this->data['Volunteer']['first_name']."%'")));
-			}
-			else // if first name has no result, search last name
-			{
-				$this->set('volunteers', $this->paginate(array("Volunteer.last_name like '%".$this->data['Volunteer']['first_name']."%'")));
-			}
+		{
+				$this->set('volunteers', $this->paginate(array("Volunteer.first_name like '%".$this->data['Volunteer']['first_name']."%' or Volunteer.last_name like '%".$this->data['Volunteer']['first_name']."%'")));
 		}
 		else
 		{

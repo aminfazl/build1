@@ -94,7 +94,11 @@
         <li>
         <?php Echo $this->Html->Link('Timesheet', '/Timesheets', array('class' => 'button'));?>
         </li>
+        <li>
+        <?php Echo $this->Html->Link('Activity Types', '/Activitytypes', array('class' => 'button'));?>
+        </li>
         </ul>
+        
 		</li>
 		<li>
 		<?php Echo $this->Html->Link('MATCHING', '#');?>

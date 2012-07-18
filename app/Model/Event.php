@@ -112,6 +112,22 @@ var $displayField = 'event_name';
 			'deleteQuery' => '',
 			'insertQuery' => ''
 		),
+		
+		'Volunteer' => array(
+			'className' => 'Volunteer',
+			'joinTable' => 'events_volunteers',
+			'foreignKey' => 'event_id',
+			'associationForeignKey' => 'volunteer_id',
+			'unique' => 'keepExisting',
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'finderQuery' => '',
+			'deleteQuery' => '',
+			'insertQuery' => ''
+		),
 		'Timesheet' => array(
 			'className' => 'Timesheet',
 			'joinTable' => 'timesheets_events',

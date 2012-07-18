@@ -3,10 +3,10 @@
 <h3><?php echo __('Search Volunteers');?></h3>
  <?php 
 echo $this->Form->create('Volunteer', array('action'=>'/index'));
-?><fieldset><legend><?php __('Filter');?></legend><?
+?><fieldset><legend><?php __('Filter');?></legend><?php
 echo $this -> Form->input('first_name', array('label' => 'Volunteer name'));
 //echo $this -> Form->input('event_description');
-?></fieldset><?
+?></fieldset><?php
 echo $this -> Form->end('Search');
 ?>
 
@@ -40,7 +40,7 @@ echo $this -> Form->end('Search');
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $volunteer['Volunteer']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $volunteer['Volunteer']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $volunteer['Volunteer']['id']), null, __('Are you sure you want to delete # %s?', $volunteer['Volunteer']['id'])); ?>
+			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $volunteer['Volunteer']['id']), null, __('Are you sure you want to delete %s?', $volunteer['Volunteer']['first_name'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

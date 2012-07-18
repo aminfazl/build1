@@ -38,7 +38,7 @@ class CommunicationchannelsController extends AppController {
  * @return void
  */
 	public function add() {
-		if ($this->request->is('post')) {
+		/*if ($this->request->is('post')) {
 			$this->Communicationchannel->create();
 			if ($this->Communicationchannel->save($this->request->data)) {
 				$this->Session->setFlash(__('The communicationchannel has been saved'));
@@ -46,6 +46,36 @@ class CommunicationchannelsController extends AppController {
 			} else {
 				$this->Session->setFlash(__('The communicationchannel could not be saved. Please, try again.'));
 			}
+		}*/
+		if ($this->request->is('post')) {
+			$this->Communicationchannel->create();
+			if ($this->Communicationchannel->save($this->request->data)) {
+				if($this->request->isAjax())
+				{
+					echo $this->Communicationchannel->getLastInsertID();
+					$this->autoRender = false;
+				}
+				
+				else
+				{
+					$this->Session->setFlash(__('The communication channel has been saved'));
+					$this->redirect(array('action' => 'index'));
+				}
+			} else {
+				if($this->request->isAjax())
+				{
+					echo 0;
+					$this->autoRender(false);
+					exit();
+				}
+				else	
+					$this->Session->setFlash(__('The communication channel could not be saved. Please, try again.'));
+			}
+		}
+		
+		else if($this->request->isAjax())
+		{
+			$this->render('ajax_add', 'ajax');
 		}
 	}
 

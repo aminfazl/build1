@@ -13,6 +13,7 @@ class Volunteer extends AppModel {
 	
 	public $displayField = 'first_name';
 	
+
 /**
  * Validation rules
  *

@@ -11,6 +11,8 @@ class Eventvenue extends AppModel {
  *
  * @var array
  */
+ 
+ public $displayField = 'venue_name';
 	public $validate = array(
 		'street_address' => array(
 			'notempty' => array(
