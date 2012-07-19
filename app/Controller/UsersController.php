@@ -7,7 +7,6 @@ App::uses('AppController', 'Controller');
  */
 class UsersController extends AppController {
 
-
 /**
  * index method
  *
@@ -21,6 +20,7 @@ class UsersController extends AppController {
 /**
  * view method
  *
+ * @throws NotFoundException
  * @param string $id
  * @return void
  */
@@ -47,13 +47,14 @@ class UsersController extends AppController {
 				$this->Session->setFlash(__('The user could not be saved. Please, try again.'));
 			}
 		}
-		$people = $this->User->Person->find('list');
-		$this->set(compact('people'));
+		$groups = $this->User->Group->find('list');
+		$this->set(compact('groups'));
 	}
 
 /**
  * edit method
  *
+ * @throws NotFoundException
  * @param string $id
  * @return void
  */
@@ -72,13 +73,15 @@ class UsersController extends AppController {
 		} else {
 			$this->request->data = $this->User->read(null, $id);
 		}
-		$people = $this->User->Person->find('list');
-		$this->set(compact('people'));
+		$groups = $this->User->Group->find('list');
+		$this->set(compact('groups'));
 	}
 
 /**
  * delete method
  *
+ * @throws MethodNotAllowedException
+ * @throws NotFoundException
  * @param string $id
  * @return void
  */
