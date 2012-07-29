@@ -28,7 +28,7 @@
 		</dd>
 		<dt><?php echo __('User'); ?></dt>
 		<dd>
-			<?php echo $this->Html->link($staff['User']['id'], array('controller' => 'users', 'action' => 'view', $staff['User']['id'])); ?>
+			<?php echo $this->Html->link($staff['User']['username'], array('controller' => 'users', 'action' => 'view', $staff['User']['id'])); ?>
 			&nbsp;
 		</dd>
 	</dl>

@@ -851,3 +851,23 @@ pre {
 #url-rewriting-warning {
 	display:none;
 }
+
+#addForm a{
+	display:inline-block;
+	width:80px;
+	line-height:25px;
+	background-color:#F36;
+	margin:10px;
+	text-align:center;
+	text-decoration:none;
+	color:#FFF;
+}
+
+
+
+
+#addForm a:hover{
+	background-color:#F66;
+}
+
+}

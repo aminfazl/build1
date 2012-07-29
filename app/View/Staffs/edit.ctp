@@ -6,8 +6,8 @@
 		echo $this->Form->input('id');
 		echo $this->Form->input('first_name');
 		echo $this->Form->input('last_name');
-		echo $this->Form->input('gender',array('label' => 'Gender', 'type' => 'select', 'options' => array('M'=>'Male','F'=>'Female')));
-		echo $this->Form->input('birth_date','dateFormat' => 'DMY','minYear' => date('Y') - 70,'maxYear' => date('Y') -18));
+		echo $this->Form->input('gender');
+		echo $this->Form->input('birth_date');
 		echo $this->Form->input('user_id');
 	?>
 	</fieldset>
@@ -20,6 +20,5 @@
 		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Staff.id')), null, __('Are you sure you want to delete # %s?', $this->Form->value('Staff.id'))); ?></li>
 		<li><?php echo $this->Html->link(__('List Staffs'), array('action' => 'index')); ?></li>
         <li><?php echo $this->Html->link(__('New Staff'), array('action' => 'add')); ?></li>
-
 	</ul>
 </div>

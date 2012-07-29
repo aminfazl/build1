@@ -5,8 +5,8 @@
 	<?php
 		echo $this->Form->input('first_name');
 		echo $this->Form->input('last_name');
-		echo $this->Form->input('gender',array('label' => 'Gender', 'type' => 'select', 'options' => array('M'=>'Male','F'=>'Female')));
-		echo $this->Form->input('birth_date',array('selected'=>array('year'=>'1980'),'dateFormat' => 'DMY','minYear' => date('Y') - 70,'maxYear' => date('Y') -18));
+		echo $this->Form->input('gender');
+		echo $this->Form->input('birth_date');
 		echo $this->Form->input('user_id');
 	?>
 	</fieldset>

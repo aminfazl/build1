@@ -2,18 +2,24 @@
 	<h2><?php echo __('Staffs'); ?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
+			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('first_name'); ?></th>
 			<th><?php echo $this->Paginator->sort('last_name'); ?></th>
+			<th><?php echo $this->Paginator->sort('gender'); ?></th>
+			<th><?php echo $this->Paginator->sort('birth_date'); ?></th>
 			<th><?php echo $this->Paginator->sort('user_id'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	<?php
 	foreach ($staffs as $staff): ?>
 	<tr>
+		<td><?php echo h($staff['Staff']['id']); ?>&nbsp;</td>
 		<td><?php echo h($staff['Staff']['first_name']); ?>&nbsp;</td>
 		<td><?php echo h($staff['Staff']['last_name']); ?>&nbsp;</td>
+		<td><?php echo h($staff['Staff']['gender']); ?>&nbsp;</td>
+		<td><?php echo h($staff['Staff']['birth_date']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($staff['User']['id'], array('controller' => 'users', 'action' => 'view', $staff['User']['id'])); ?>
+			<?php echo $this->Html->link($staff['User']['username'], array('controller' => 'users', 'action' => 'view', $staff['User']['id'])); ?>
 		</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $staff['Staff']['id'])); ?>

@@ -1,45 +1,45 @@
 <?php
 App::uses('AppModel', 'Model');
 /**
- * Staff Model
+ * Contact Model
  *
+ * @property Staff $Staff
  * @property User $User
- * @property Contact $Contact
+ * @property Contacttype $Contacttype
  */
-class Staff extends AppModel {
+class Contact extends AppModel {
 	
-	public $displayField = 'first_name';
-
+	public $displayField = 'refnumber';
 /**
  * Validation rules
  *
  * @var array
  */
 	public $validate = array(
-		'first_name' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+		'refnumber' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				'message' => 'Reference number is required',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'last_name' => array(
+		'description' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => 'Description is required',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'birth_date' => array(
-			'date' => array(
-				'rule' => array('date'),
-				//'message' => 'Your custom message here',
+		'staff_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				'message' => 'Staff id is required',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -49,7 +49,17 @@ class Staff extends AppModel {
 		'user_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
+				'message' => 'User id is required',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'contacttype_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				'message' => 'Contact type is required',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -66,34 +76,26 @@ class Staff extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
+		'Staff' => array(
+			'className' => 'Staff',
+			'foreignKey' => 'staff_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
 		'User' => array(
 			'className' => 'User',
 			'foreignKey' => 'user_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
-		)
-	);
-
-/**
- * hasMany associations
- *
- * @var array
- */
-	public $hasMany = array(
-		'Contact' => array(
-			'className' => 'Contact',
-			'foreignKey' => 'staff_id',
-			'dependent' => false,
+		),
+		'Contacttype' => array(
+			'className' => 'Contacttype',
+			'foreignKey' => 'contacttype_id',
 			'conditions' => '',
 			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'order' => ''
 		)
 	);
-
 }
