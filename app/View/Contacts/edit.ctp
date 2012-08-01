@@ -4,7 +4,6 @@
 		<legend><?php echo __('Edit Contact'); ?></legend>
 	<?php
 		echo $this->Form->input('id');
-		echo $this->Form->input('refnumber');
 		echo $this->Form->input('staff_id');
 		echo $this->Form->input('user_id');
 		echo $this->Form->input('contacttype_id');

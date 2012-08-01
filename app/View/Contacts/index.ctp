@@ -2,7 +2,7 @@
 	<h2><?php echo __('Contacts'); ?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('refnumber'); ?></th>
+			<th><?php echo $this->Paginator->sort('ref Number'); ?></th>
 			<th><?php echo $this->Paginator->sort('description'); ?></th>
 			<th><?php echo $this->Paginator->sort('staff_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('user_id'); ?></th>
@@ -12,7 +12,7 @@
 	<?php
 	foreach ($contacts as $contact): ?>
 	<tr>
-		<td><?php echo h($contact['Contact']['refnumber']); ?>&nbsp;</td>
+		<td><?php echo h($contact['Contact']['id']); ?>&nbsp;</td>
 		<td><?php echo h($contact['Contact']['description']); ?>&nbsp;</td>
 		<td>
 			<?php echo $this->Html->link($contact['Staff']['first_name'], array('controller' => 'staffs', 'action' => 'view', $contact['Staff']['id'])); ?>

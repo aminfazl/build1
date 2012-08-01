@@ -37,16 +37,49 @@ class InterestslogsController extends AppController {
  *
  * @return void
  */
-	public function add() {
+ 
+ 	public function add() {
 		if ($this->request->is('post')) {
 			$this->Interestslog->create();
 			if ($this->Interestslog->save($this->request->data)) {
 				$this->Session->setFlash(__('The interestslog has been saved'));
 				$this->redirect(array('action' => 'index'));
+			
 			} else {
-				$this->Session->setFlash(__('The interestslog could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The interestslog could not be saved. Please, try again.'));			
 			}
 		}
+		$interests = $this->Interestslog->Interest->find('list');
+		$clients = $this->Interestslog->Client->find('list');
+		$this->set(compact('interests', 'clients'));
+	}
+
+	
+	
+	public function interests_add($client_id = null) {
+		$this->set('client_id', $client_id);
+		if ($this->request->is('post')) {
+			$this->Interestslog->create();
+			$a = 0;
+			foreach ($this->data['Interestslog']['interest_id'] as $v) {
+				$data = array(
+					'interest_id' => $v
+					);
+				
+				if($this->Interestslog->saveAll($data)){
+					$a = 1;
+				}
+			}
+				if($a==1){
+					$this->Session->setFlash(__('The interestslog has been saved'));
+					$this->redirect(array('action' => 'index','controller' => 'clients'));
+				}
+				else{
+					$this->Session->setFlash(__('The interestslog could not be saved. Please, try again.'));
+				}
+			}
+
+
 		$interests = $this->Interestslog->Interest->find('list');
 		$clients = $this->Interestslog->Client->find('list');
 		$this->set(compact('interests', 'clients'));
@@ -93,7 +126,7 @@ class InterestslogsController extends AppController {
 			throw new NotFoundException(__('Invalid interestslog'));
 		}
 		if ($this->Interestslog->delete()) {
-			$this->Session->setFlash(__('Interestslog deleted'));
+			$this->Session->setFlash(__("nterestslog has been deleted'"));
 			$this->redirect(array('action' => 'index'));
 		}
 		$this->Session->setFlash(__('Interestslog was not deleted'));

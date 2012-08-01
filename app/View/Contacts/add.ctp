@@ -8,7 +8,6 @@
 			echo ('Add Contact for User Id: ');echo ($user_id);}
 		 ?></legend>
 	<?php
-		echo $this->Form->input('refnumber');
 		echo $this->Form->input('staff_id');
 		echo $this->Form->input('user_id', array('value' => $user_id));
 		echo $this->Form->input('contacttype_id');

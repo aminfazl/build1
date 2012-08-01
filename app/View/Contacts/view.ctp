@@ -1,14 +1,9 @@
 <div class="contacts view">
 <h2><?php  echo __('Contact'); ?></h2>
 	<dl>
-		<dt><?php echo __('Id'); ?></dt>
+		<dt><?php echo __('Reference Number'); ?></dt>
 		<dd>
 			<?php echo h($contact['Contact']['id']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Refnumber'); ?></dt>
-		<dd>
-			<?php echo h($contact['Contact']['refnumber']); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Staff'); ?></dt>
