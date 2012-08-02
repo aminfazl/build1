@@ -122,4 +122,6 @@ Cache::config('default', array('engine' => 'File'));
  * CakePlugin::load('DebugKit'); //Loads a single plugin named DebugKit
  *
  */
-Configure::write('Volunteer_group', '1');
+Configure::write('Volunteer_group', 2);
+Configure::write('Carer_group', 1);
+Configure::write('Client_group', 3);

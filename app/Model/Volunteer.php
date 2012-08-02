@@ -137,20 +137,14 @@ class Volunteer extends AppModel {
 			'fields' => '',
 			'order' => ''
 		),
-		'Communicationchannel' => array(
-			'className' => 'Communicationchannel',
-			'foreignKey' => 'communicationchannel_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		),
-		'State' => array(
-			'className' => 'State',
-			'foreignKey' => 'state_id',
+		'User' => array(
+			'className' => 'User',
+			'foreignKey' => 'user_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		)
+		
 	);
 
 /**

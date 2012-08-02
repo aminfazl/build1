@@ -14,47 +14,47 @@
 		<dt><?php echo __('Communication
 		Channel'); ?></dt>
 		<dd>
-			<?php echo $this->Html->link($volunteer['Communicationchannel']['communicationchannel_name'], array('controller' => 'communicationchannels', 'action' => 'view', $volunteer['Communicationchannel']['id'])); ?>
+			<?php echo $this->Html->link($volunteer['User']['Communicationchannel']['communicationchannel_name'], array('controller' => 'communicationchannels', 'action' => 'view', $volunteer['User']['Communicationchannel']['id'])); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('First Name'); ?></dt>
 		<dd>
-			<?php echo h($volunteer['Volunteer']['first_name']); ?>
+			<?php echo h($volunteer['User']['first_name']); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Last Name'); ?></dt>
 		<dd>
-			<?php echo h($volunteer['Volunteer']['last_name']); ?>
+			<?php echo h($volunteer['User']['last_name']); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Gender'); ?></dt>
 		<dd>
-			<?php echo h($volunteer['Volunteer']['gender']); ?>
+			<?php echo h($volunteer['User']['gender']); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Birth Date'); ?></dt>
 		<dd>
-			<?php echo h($volunteer['Volunteer']['birth_date']); ?>
+			<?php echo h($volunteer['User']['birth_date']); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Postcode'); ?></dt>
 		<dd>
-			<?php echo h($volunteer['Volunteer']['postcode']); ?>
+			<?php echo h($volunteer['User']['postcode']); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('State'); ?></dt>
 		<dd>
-			<?php echo $this->Html->link($volunteer['State']['state_name'], array('controller' => 'states', 'action' => 'view', $volunteer['State']['id'])); ?>
+			<?php echo $this->Html->link($volunteer['User']['State']['state_name'], array('controller' => 'states', 'action' => 'view', $volunteer['User']['State']['id'])); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Suburb'); ?></dt>
 		<dd>
-			<?php echo h($volunteer['Volunteer']['suburb']); ?>
+			<?php echo h($volunteer['User']['suburb']); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Street Address'); ?></dt>
 		<dd>
-			<?php echo h($volunteer['Volunteer']['street_address']); ?>
+			<?php echo h($volunteer['User']['street_address']); ?>
 			&nbsp;
 		</dd>
 	</dl>
@@ -63,7 +63,7 @@
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('Edit Volunteer'), array('action' => 'edit', $volunteer['Volunteer']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Volunteer'), array('action' => 'delete', $volunteer['Volunteer']['first_name']), null, __('Are you sure you want to delete # %s?', $volunteer['Volunteer']['id'])); ?> </li>
+		<li><?php echo $this->Form->postLink(__('Delete Volunteer'), array('action' => 'delete', $volunteer['User']['first_name']), null, __('Are you sure you want to delete # %s?', $volunteer['Volunteer']['id'])); ?> </li>
 		<li><?php echo $this->Html->link(__('List Volunteers'), array('action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Volunteer'), array('action' => 'add')); ?> </li>
 	</ul>

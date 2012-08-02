@@ -4,16 +4,17 @@
 		<legend><?php echo __('Edit Volunteer'); ?></legend>
 	<?php
 		echo $this->Form->input('id');	
-		echo $this->Form->input('first_name');
-		echo $this->Form->input('last_name');
-		echo $this->Form->input('gender',array('label' => 'Gender', 'type' => 'select', 'options' => array('M'=>'Male','F'=>'Female')));
-		echo $this->Form->input('birth_date',array('dateFormat' => 'DMY','minYear' => date('Y') - 70,'maxYear' => date('Y') -18));
-		echo $this->Form->input('street_address');
-		echo $this->Form->input('suburb', array('class' => 'suburb'));
-		echo $this->Form->input('state_id');
-		echo $this->Form->input('postcode', array('class' => 'postcode'));
+		echo $this->Form->input('User.first_name');
+		echo $this->Form->input('User.last_name');
+		echo $this->Form->input('User.gender',array('label' => 'Gender', 'type' => 'select', 'options' => array('M'=>'Male','F'=>'Female')));
+		echo $this->Form->input('User.birth_date',array('dateFormat' => 'DMY','minYear' => date('Y') - 70,'maxYear' => date('Y') -18));
+		echo $this->Form->input('User.street_address');
+		echo $this->Form->input('User.suburb', array('class' => 'suburb'));
+		echo $this->Form->input('User.state_id');
+		echo $this->Form->input('User.postcode', array('class' => 'postcode'));
 		echo $this->Form->input('volunteerstatus_id');
-		echo $this->Form->input('communicationchannel_id');
+		echo $this->Form->input('User.communicationchannel_id');
+        echo $this->Form->hidden('User.id');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit'));?>

@@ -27,20 +27,20 @@ echo $this -> Form->end('Search');
 	<?php
 	foreach ($volunteers as $volunteer): ?>
 	<tr>
-		<td><?php echo h($volunteer['Volunteer']['first_name']); ?>&nbsp;</td>
-		<td><?php echo h($volunteer['Volunteer']['last_name']); ?>&nbsp;</td>
-		<td><?php echo h($volunteer['Volunteer']['gender']); ?>&nbsp;</td>
-		<td><?php echo h($volunteer['Volunteer']['street_address']); ?>&nbsp;</td>
-		<td><?php echo h($volunteer['Volunteer']['suburb']); ?>&nbsp;</td>
-		<td><?php echo h($volunteer['Volunteer']['postcode']); ?>&nbsp;</td>
+		<td><?php echo h($volunteer['User']['first_name']); ?>&nbsp;</td>
+		<td><?php echo h($volunteer['User']['last_name']); ?>&nbsp;</td>
+		<td><?php echo h($volunteer['User']['gender']); ?>&nbsp;</td>
+		<td><?php echo h($volunteer['User']['street_address']); ?>&nbsp;</td>
+		<td><?php echo h($volunteer['User']['suburb']); ?>&nbsp;</td>
+		<td><?php echo h($volunteer['User']['postcode']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($volunteer['State']['state_name'], array('controller' => 'states', 'action' => 'view', $volunteer['State']['id'])); ?>
+			<?php echo $this->Html->link($volunteer['User']['State']['state_name'], array('controller' => 'states', 'action' => 'view', $volunteer['User']['State']['id'])); ?>
 		</td>
 		
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $volunteer['Volunteer']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $volunteer['Volunteer']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $volunteer['Volunteer']['id']), null, __('Are you sure you want to delete %s?', $volunteer['Volunteer']['first_name'])); ?>
+			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $volunteer['Volunteer']['id']), null, __('Are you sure you want to delete %s?', $volunteer['User']['first_name'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

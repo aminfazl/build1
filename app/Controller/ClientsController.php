@@ -66,15 +66,53 @@ class ClientsController extends AppController {
 		$this->set(compact('disabilities', 'prioritylevels', 'fundingsources', 'religions', 'birthcountries', 'communicationchannels', 'statuses', 'families', 'events'));*/
 		//$this->loadModel('Family');
 		if ($this->request->is('post')) {
+			$UserCounter = 1;
 			$this->Client->create();
 			if(isset($this->request->data['Family']['Primarycarer']))
 			{
-				if ($this->Client->Family->Primarycarer->save($this->request->data['Family']['Primarycarer'])) {
+				
+				$FamilyArray = array();
+				$FamilyArray['User'] = $this->request->data['Family']['Primarycarer']["User"];
+				$FamilyArray['Primarycarer'] = $this->request->data['Family']['Primarycarer']["Carer"];
+			
+				$UserCounter = 1;
+				$UserStr = substr ($FamilyArray['User']['first_name'] , 0 , 1 ) . substr ($FamilyArray['User']['last_name'] , 0 , 3 );
+				$FamilyArray['User']['username'] = $UserStr . $UserCounter;
+				$FamilyArray['User']['password'] = '1';
+				$FamilyArray['User']['group_id'] = Configure::read('Carer_group');
+			
+			//debug($FamilyArray);
+			//die();
+			while (!$this->Client->Family->Primarycarer->User->validates(array('fieldList' => array('username')))) { 
+				
+				$UserCounter++;
+				$FamilyArray['User']['username'] = $UserStr . $UserCounter;
+				$this->request->data['User']['username'] = $UserStr . $UserCounter;
+				$this->Client->Family->Primarycarer->User->set( $this->data );
+			}
+				//debug($FamilyArray);
+				//$this->Client->Family->Primarycarer->saveAll($FamilyArray);
+				//die();
+				if ($this->Client->Family->Primarycarer->saveAll($FamilyArray)) {
 					$Primarycarer_id = $this->Client->Family->Primarycarer->getLastInsertID();
 					
 					if(isset($this->request->data['Family']['Secondarycarer']))
 					{
-						if ($this->Client->Family->Primarycarer->save($this->request->data['Family']['Secondarycarer'])) {
+						$FamilyArray['User'] = $this->request->data['Family']['Secondarycarer']["User"];
+						$FamilyArray['Secondarycarer'] = $this->request->data['Family']['Secondarycarer']["Carer"];
+						$FamilyArray['User']['username'] = $UserStr . $UserCounter;
+						$FamilyArray['User']['password'] = '1';
+						$FamilyArray['User']['group_id'] = Configure::read('Carer_group');
+						$UserStr = substr ($FamilyArray['User']['first_name'] , 0 , 1 ) . substr ($FamilyArray['User']['last_name'] , 0 , 3 );
+						while (!$this->Client->Family->Secondarycarer->User->validates(array('fieldList' => array('username')))) { 
+				
+							$UserCounter++;
+							$FamilyArray['User']['username'] = $UserStr . $UserCounter;
+							$this->request->data['User']['username'] = $UserStr . $UserCounter;
+							$this->Client->Family->Secondarycarer->User->set( $this->data );
+						}
+						
+						if ($this->Client->Family->Secondarycarer->saveAll($FamilyArray)) {
 							$Secondarycarer_id = $this->Client->Family->Secondarycarer->getLastInsertID();
 						}
 						
@@ -102,7 +140,20 @@ class ClientsController extends AppController {
 				$Primarycarer_id  = $this->request->data['Family']['primarycarer_ID'];
 				if(isset($this->request->data['Family']['Secondarycarer']))
 					{
-						if ($this->Client->Family->Primarycarer->save($this->request->data['Family']['Secondarycarer'])) {
+						$FamilyArray['User'] = $this->request->data['Family']['Secondarycarer']["User"];
+						$FamilyArray['Secondarycarer'] = $this->request->data['Family']['Secondarycarer']["Carer"];
+						$FamilyArray['User']['username'] = $UserStr . $UserCounter;
+						$FamilyArray['User']['password'] = '1';
+						$FamilyArray['User']['group_id'] = Configure::read('Carer_group');
+						$UserStr = substr ($FamilyArray['User']['first_name'] , 0 , 1 ) . substr ($FamilyArray['User']['last_name'] , 0 , 3 );
+						while (!$this->Client->Family->Secondarycarer->User->validates(array('fieldList' => array('username')))) { 
+				
+							$UserCounter++;
+							$FamilyArray['User']['username'] = $UserStr . $UserCounter;
+							$this->request->data['User']['username'] = $UserStr . $UserCounter;
+							$this->Client->Family->Secondarycarer->User->set( $this->data );
+						}
+						if ($this->Client->Family->Primarycarer->saveAll($FamilyArray)) {
 							$Secondarycarer_id = $this->Client->Family->Secondarycarer->getLastInsertID();
 						}
 						
@@ -126,15 +177,50 @@ class ClientsController extends AppController {
 					$FamilyArray['secondarycarer_ID'] = $Secondarycarer_id;
 				}
 				
-				if ($this->Client->Family->save($FamilyArray )) {
+				if ($this->Client->Family->saveAll($FamilyArray )) {
 						$Family_id = $this->Client->Family->getLastInsertID();
 						$this->request->data['Client']['family_id']=$Family_id;
 						
-						if ($this->Client->save($this->request->data['Client'])) {
-							$this->Session->setFlash(__('The client has been saved'));
-							$this->redirect(array('action' => 'index'));
-							} else {
-								$this->Session->setFlash(__('The client could not be saved. Please, try again.'));
+						$clientArray = array();
+						$clientArray['User'] = $this->request->data['User'];
+						$clientArray['User']['username'] = $UserStr . $UserCounter;
+						$clientArray['User']['password'] = '1';
+						$clientArray['User']['group_id'] = Configure::read('Client_group');
+						$clientArray['Client'] = $this->request->data['Client'];
+						//$clientArray['Client']['family_id'] = $Family_id;
+						$UserStr = substr ($clientArray['User']['first_name'] , 0 , 1 ) . substr ($clientArray['User']['last_name'] , 0 , 3 );
+						while (!$this->Client->User->validates(array('fieldList' => array('username')))) { 
+				
+							$UserCounter++;
+							$clientArray['User']['username'] = $UserStr . $UserCounter;
+							$this->request->data['User']['username'] = $UserStr . $UserCounter;
+							$this->Client->User->set( $this->data );
+						}
+						
+						//debug ($clientArray);
+						//die();
+						//echo debug( $this->Client->Schema() );
+//die();
+						if ($this->Client->User->save($clientArray)) {
+							$User_id = $this->Client->User->getLastInsertID();
+							$clientArray['Client']['user_id'] = $User_id;
+							if ($this->Client->save($clientArray)) {
+								
+								$this->Session->setFlash(__('The client has been saved'));
+								$this->redirect(array('action' => 'index'));
+							}
+							
+							 else {
+								
+								//debug($this->validationErrors); 
+							//die();
+								$this->Session->setFlash(__('The client could not be saved. One of the fields was entered incorrectly'));
+									}
+								} else {
+								
+								//debug($this->validationErrors); 
+							//die();
+								$this->Session->setFlash(__('The client could not be saved. One of the fields was entered incorrectly.'));
 									}
 		//				debug( $this->request->data['Family']);
 						//$this->autoRender = false;
@@ -239,10 +325,10 @@ class ClientsController extends AppController {
 		$fundingsources = $this->Client->Fundingsource->find('list');
 		$religions = $this->Client->Religion->find('list');
 		$birthcountries = $this->Client->Birthcountry->find('list');
-		$communicationchannels = $this->Client->Communicationchannel->find('list');
+		$communicationchannels = $this->Client->User->Communicationchannel->find('list');
 		$statuses = $this->Client->Clientstatus->find('list');
 		$families = $this->Client->Family->find('list');
-		$events = $this->Client->Event->find('list');
+		$events = $this->Client->User->Event->find('list');
 		//$this->loadModel('Family');
 		//$this->Family->loadModel("Carer");
 		$incomesources = $this->Client->Family->Primarycarer->Incomesource->find('list');	

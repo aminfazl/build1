@@ -22,17 +22,17 @@
 	<?php
 	foreach ($clients as $client): ?>
 	<tr>
-		<td><?php echo h($client['Client']['first_name']).", ".h($client['Client']['last_name']); ?>&nbsp;</td>
+		<td><?php echo h($client['User']['first_name']).", ".h($client['User']['last_name']); ?>&nbsp;</td>
         
         <td>
-			<?php echo $this->Html->link($client['Family']['Primarycarer']['street_address'], array('controller' => 'carers', 'action' => 'view', $client['Family']['Primarycarer']['id'])); ?>
+			<?php echo $this->Html->link($client['User']['street_address'], array('controller' => 'carers', 'action' => 'view', $client['Family']['Primarycarer']['id'])); ?>
 		</td>
 
 		<td>
 			<?php echo $this->Html->link($client['Clientstatus']['status_name'], array('controller' => 'clientstatuses', 'action' => 'view', $client['Clientstatus']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($client['Communicationchannel']['communicationchannel_name'], array('controller' => 'communicationchannels', 'action' => 'view', $client['Communicationchannel']['id'])); ?>
+			<?php echo $this->Html->link($client['User']['Communicationchannel']['communicationchannel_name'], array('controller' => 'communicationchannels', 'action' => 'view', $client['User']['Communicationchannel']['id'])); ?>
 		</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $client['Client']['id'])); ?>

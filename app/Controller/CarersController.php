@@ -65,10 +65,11 @@ class CarersController extends AppController {
 	
 	public function ajax_add() {
 		$incomesources = $this->Carer->Incomesource->find('list');
-		$states = $this->Carer->State->find('list');
+		$states = $this->Carer->User->State->find('list');
 		$lgacouncils = $this->Carer->Lgacouncil->find('list');
 		$languages = $this->Carer->Language->find('list');
-		$this->set(compact('incomesources', 'states', 'lgacouncils', 'languages'));
+		$communicationchannels = $this->Carer->User->Communicationchannel->find('list');
+		$this->set(compact('incomesources', 'states', 'lgacouncils', 'languages','communicationchannels'));
 		$this->render("ajax_add", "ajax");
 		$this->autoRender = false;
 	}
@@ -125,7 +126,7 @@ class CarersController extends AppController {
 	
 	public function search() {
 		$this->Carer->recursive = 0;
-		$carers = $this->Carer->find("list", array("conditions"=>array("CONCAT(first_name, ' ', last_name) LIKE '%" . $this->data['criteria'] . "%'")));
+		$carers = $this->Carer->User->find("list", array("conditions"=>array("CONCAT(first_name, ' ', last_name) LIKE '%" . $this->data['criteria'] . "%'")));
 		$this->set(compact('carers'));
 		if(count($carers) == 0)
 		{

@@ -333,4 +333,37 @@ $this->Client->recursive = -1;
 		$events = $this->EventsClient->Event->find('list');
 		$this->set(compact('clients', 'events'));
 	}
+	
+	public function contactclients($id = null) {
+		$this->EventsClient->Client->recursive = -1;
+		$options['fields'] = array('EventsClient.id', 'EventsClient.comment', 'EventsClient.confirmed', 'EventsClient.attended', 'Client.phone', 'Client.id', 'Client.last_name', 'Client.first_name', 'Primarycarer.street_address', 'Primarycarer.suburb', 'Primarycarer.postcode' );
+		$options['conditions']  = array(array('EventsClient.event_id'=>$id));
+		$options['joins'] = array(
+		array('table' => 'events_clients',
+		'alias' => 'EventsClient',
+		'type' => 'LEFT',
+		'conditions' => array(
+		'EventsClient.client_id = Client.id',
+		)
+		),
+		array('table' => 'families',
+		'alias' => 'Family',
+		'type' => 'LEFT',
+		'conditions' => array(
+		'Client.family_id = Family.id',
+		)
+		),
+		array('table' => 'carers',
+		'alias' => 'Primarycarer',
+		'type' => 'LEFT',
+		'conditions' => array(
+		'Family.primarycarer_ID = Primarycarer.id',
+		)
+		)
+		);
+		$this->paginate = $options;
+		$this->set('eventsClients', $this->paginate($this->EventsClient->Client));
+		$this->set('events', $this->EventsClient->Event->find('all', array('conditions' => array('Event.id' => $id))));
+		$this->set(compact('events'));
+	}
 }

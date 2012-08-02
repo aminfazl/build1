@@ -2,11 +2,20 @@
 <?php echo $this->Form->create('EventsClient');?>
 	<fieldset>
 		<legend><?php echo __('Select clients and add booking'); ?></legend>
+        <?php if (count($clients) > 0)
+        {
+        ?>
 	<?php
 		echo $this->Form->input('client_id', array('options'=>$clients, 'type'=>'select', 'legend'=>false, 'multiple'=>'checkbox', 'label'=>false));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit'));?>
+ <?php 
+ 		}
+        
+        else
+        	echo "No additional clients can be invited to this event"
+        ?>
 </div>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>

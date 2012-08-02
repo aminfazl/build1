@@ -3,10 +3,17 @@
 	<fieldset>
 		<legend><?php echo __('Add Client'); ?></legend>
 	<?php
-		echo $this->Form->input('first_name');
-		echo $this->Form->input('last_name');
-		echo $this->Form->input('gender',array('label' => 'Gender', 'type' => 'select', 'options' => array('M'=>'Male','F'=>'Female')));
-		echo $this->Form->input('birth_date', array('selected'=>array('year'=>'2000'),'dateFormat' => 'DMY','minYear' => date('Y') - 50,'maxYear' => date('Y')));
+		echo $this->Form->input('User.first_name');
+		echo $this->Form->input('User.last_name');
+		echo $this->Form->input('User.gender',array('label' => 'Gender', 'type' => 'select', 'options' => array('M'=>'Male','F'=>'Female')));
+		echo $this->Form->input('User.birth_date', array('selected'=>array('year'=>'2000'),'dateFormat' => 'DMY','minYear' => date('Y') - 50,'maxYear' => date('Y')));
+        echo $this->Form->input('User.street_address');		
+		echo $this->Form->input('User.suburb');
+		echo $this->Form->input('User.state_id');
+		echo $this->Form->input('User.postcode');		
+        echo $this->Form->input('User.email');
+        echo $this->Form->input('User.phone');
+        
 		
 		echo $this->Form->input('birthcountry_id', array('default'=>'13','label'=>'Birth Country', 'after'=>$this->Js->link('New', array('controller'=>'countries', 'action'=>'add' ), array('class'=>'linkNew' ))));?>
         <div class="ajaxForm" id="countryForm">
@@ -40,7 +47,7 @@
 	
 	
 	<?php
-		echo $this->Form->input('communicationchannel_id', array('label' => 'Communication Channel', 'after'=>$this->Js->link('New', array('controller'=>'Communicationchannels', 'action'=>'add' ), array('class'=>'newChannel' ))));?>
+		echo $this->Form->input('User.communicationchannel_id', array('label' => 'Communication Channel', 'after'=>$this->Js->link('New', array('controller'=>'Communicationchannels', 'action'=>'add' ), array('class'=>'newChannel' ))));?>
         <div class="channelForm" id="chanelForm">
         	<div class="channelInputs" id="chanelInputs">
             </div>
@@ -128,8 +135,8 @@
 
         <?php
 		echo $this->Form->input('dateaccepted', array('label' => 'Date Accepted','dateFormat' => 'DMY','minYear' => date('Y') - 50,'maxYear' => date('Y')));
-		echo $this->Form->input('primarycarer_search',  array('id'=>'searchTextPrimary','label' => 'Primary Carer', 'div'=>false, 'size'=>20, 'after'=>$this->Js->link('Search', array('controller'=>'carers', 'action'=>'search' ), array('id'=>'linkSearchPrimary' )) . '  '. $this->Js->link('New', array('controller'=>'carers', 'action'=>'ajax_add' ), array('id'=>'linkNewCarerPrimary'))));
-		echo $this->Form->input('secondarycarer_search',  array('id'=>'searchTextSecondary','label' => 'Secondary Carer', 'div'=>false, 'size'=>20, 'after'=>$this->Js->link('Search', array('controller'=>'carers', 'action'=>'search' ), array('id'=>'linkSearchSecondary' )) . '  '. $this->Js->link('New', array('controller'=>'carers', 'action'=>'ajax_add' ), array('id'=>'linkNewCarerSecondary'))));
+		echo $this->Form->input('Search.primarycarer_search',  array('id'=>'searchTextPrimary','label' => 'Primary Carer', 'div'=>false, 'size'=>20, 'after'=>$this->Js->link('Search', array('controller'=>'carers', 'action'=>'search' ), array('id'=>'linkSearchPrimary' )) . '  '. $this->Js->link('New', array('controller'=>'carers', 'action'=>'ajax_add' ), array('id'=>'linkNewCarerPrimary'))));
+		echo $this->Form->input('Search.secondarycarer_search',  array('id'=>'searchTextSecondary','label' => 'Secondary Carer', 'div'=>false, 'size'=>20, 'after'=>$this->Js->link('Search', array('controller'=>'carers', 'action'=>'search' ), array('id'=>'linkSearchSecondary' )) . '  '. $this->Js->link('New', array('controller'=>'carers', 'action'=>'ajax_add' ), array('id'=>'linkNewCarerSecondary'))));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit'));?>

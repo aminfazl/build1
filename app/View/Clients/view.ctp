@@ -1,11 +1,5 @@
 <div class="clients view">
-<h2><?php  echo __('Client');?>
-</h2>
-	 <div align="right" >
-    <?php echo $this->Html->link(__('New Contact'), array('action' => 'add', 'controller' => 'contacts', $client['Client']['user_id'])); ?>
-    &nbsp;&nbsp;&nbsp;
-    <?php echo $this->Html->link(__('History of Contacts'), array('action' => 'list_contacts', 'controller' => 'contacts', $client['Client']['user_id'])); ?>
-    </div>
+<h2><?php  echo __('Client');?></h2>
 	<dl>
 		<dt><?php echo __('Id'); ?></dt>
 		<dd>
@@ -89,7 +83,6 @@
 		</dd>
 	</dl>
 </div>
-
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>

@@ -118,7 +118,7 @@ class Client extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'dateaccepted' => array(
+		/*'dateaccepted' => array(
 			'date' => array(
 				'rule' => array('date'),
 				//'message' => 'Your custom message here',
@@ -127,7 +127,7 @@ class Client extends AppModel {
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
-		),
+		),*/
 		'birthcountry_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
@@ -170,6 +170,8 @@ class Client extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
+		
+		
 	);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
@@ -215,13 +217,6 @@ class Client extends AppModel {
 			'fields' => '',
 			'order' => ''
 		),
-		'Communicationchannel' => array(
-			'className' => 'Communicationchannel',
-			'foreignKey' => 'communicationchannel_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		),
 		'Clientstatus' => array(
 			'className' => 'Clientstatus',
 			'foreignKey' => 'status_id',
@@ -232,6 +227,13 @@ class Client extends AppModel {
 		'Family' => array(
 			'className' => 'Family',
 			'foreignKey' => 'family_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
+		'User' => array(
+			'className' => 'User',
+			'foreignKey' => 'user_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
@@ -278,22 +280,5 @@ class Client extends AppModel {
  *
  * @var array
  */
-	public $hasAndBelongsToMany = array(
-		'Event' => array(
-			'className' => 'Event',
-			'joinTable' => 'events_clients',
-			'foreignKey' => 'client_id',
-			'associationForeignKey' => 'event_id',
-			'unique' => 'keepExisting',
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'finderQuery' => '',
-			'deleteQuery' => '',
-			'insertQuery' => ''
-		)
-	);
-
+	
 }
