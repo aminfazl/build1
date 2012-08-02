@@ -80,6 +80,26 @@
 		<th><?php echo __('Workdate'); ?></th>
 		<th><?php echo __('Fromtime'); ?></th>
 		<th><?php echo __('Totime'); ?></th>
+
+
+
+
+		<!-- -->
+
+		<!-- Label to add field name in the timesheets viewer table-->
+
+		<th><?php echo __('Payment'); ?></th>
+
+
+		<!-- -->
+
+
+
+
+
+
+
+
 		<th class="actions"><?php echo __('Actions');?></th>
 	</tr>
 	<?php
@@ -93,6 +113,24 @@
 			<td><?php echo $timesheet['workdate'];?></td>
 			<td><?php echo $timesheet['fromtime'];?></td>
 			<td><?php echo $timesheet['totime'];?></td>
+
+
+
+			
+
+			<!-- -->
+
+			<!-- To get the visittype data from the database-->
+			<td><?php echo $timesheet['visittype'];?></td>
+
+
+			<!-- -->
+
+
+
+
+
+
 			<td class="actions">
 				<?php echo $this->Html->link(__('View'), array('controller' => 'timesheets', 'action' => 'view', $timesheet['id'])); ?>
 				<?php echo $this->Html->link(__('Edit'), array('controller' => 'timesheets', 'action' => 'edit', $timesheet['id'])); ?>

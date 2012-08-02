@@ -55,6 +55,26 @@ class Timesheet extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
+		'start_date' => array(
+			'date' => array(
+				'rule' => array('date'),
+				'message' => 'Please select a date',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'end_date' => array(
+			'date' => array(
+				'rule' => array('date'),
+				'message' => 'Please select a date',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
 		'fromtime' => array(
 			'time' => array(
 				'rule' => array('time'),

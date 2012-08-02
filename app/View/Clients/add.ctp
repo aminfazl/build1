@@ -3,6 +3,7 @@
 	<fieldset>
 		<legend><?php echo __('Add Client'); ?></legend>
 	<?php
+<<<<<<< HEAD
 		echo $this->Form->input('User.first_name');
 		echo $this->Form->input('User.last_name');
 		echo $this->Form->input('User.gender',array('label' => 'Gender', 'type' => 'select', 'options' => array('M'=>'Male','F'=>'Female')));
@@ -14,6 +15,12 @@
         echo $this->Form->input('User.email');
         echo $this->Form->input('User.phone');
         
+=======
+		echo $this->Form->input('first_name');
+		echo $this->Form->input('last_name');
+		echo $this->Form->input('gender',array('label' => 'Gender', 'type' => 'select', 'options' => array('M'=>'Male','F'=>'Female')));
+		echo $this->Form->input('User.birth_date', array('selected'=>array('year'=>'2000'),'dateFormat' => 'DMY','minYear' => date('Y') - 50,'maxYear' => date('Y')));
+>>>>>>> Commit to Sync
 		
 		echo $this->Form->input('birthcountry_id', array('default'=>'13','label'=>'Birth Country', 'after'=>$this->Js->link('New', array('controller'=>'countries', 'action'=>'add' ), array('class'=>'linkNew' ))));?>
         <div class="ajaxForm" id="countryForm">

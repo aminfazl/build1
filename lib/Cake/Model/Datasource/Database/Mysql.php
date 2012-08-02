@@ -44,9 +44,9 @@ class Mysql extends DboSource {
 		'persistent' => true,
 		'host' => 'localhost',
 		'login' => 'root',
-		'password' => '',
-		'database' => 'cake',
-		'port' => ''
+		'password' => 'root',
+		'database' => 'clientdb',
+		'port' => '8889'
 	);
 
 /**

@@ -103,4 +103,39 @@ class TimesheetsController extends AppController {
 		$this->Session->setFlash(__('Timesheet was not deleted'));
 		$this->redirect(array('action' => 'index'));
 	}
+
+	public function payroll(){
+		$this->loadModel('Volunteer');
+		$this->set('volunteers', $this->paginate());
+		if($this->request->is('post')){
+			$this->Timesheet->recursive=2;
+			//$cond=array("timesheet.workdate>=".$this->data["Timesheet"]["start_date"].", 'YYYYMMDD') and timesheet.workdate<=to_char(".$this->data["Timesheet"]["end_date"].", 'YYYYMMDD')");
+			$cond=array("Timesheet.workdate>=".$this->data["Timesheet"]["start_date"]." and Timesheet.workdate<=".$this->data["Timesheet"]["end_date"]." order by Timesheet.volunteer_id");
+			$this->set('records', $this->paginate('Timesheet', $cond));
+
+			$cond2=array("Payrate.fromdate<=".$this->data["Timesheet"]["start_date"]." and Payrate.todate>=".$this->data["Timesheet"]["end_date"]);
+			$this->set('rates', $this->paginate('Payrate', $cond2));
+
+			foreach($records as $record){
+				$id=$record['volunteer_id'];
+				$payrolls[($record['volunteer_id'])]['First_Name']=$record['Volunteer']['User']['first_name'];
+				$payrolls[($record['volunteer_id'])]['Last_Name']=$record['Volunteer']['User']['first_name'];
+				$payrolls[$id]['Visits']++;
+				$hours=CakeTime::format('H',($record['totime']-$record['fromtime']));
+				$payrolls[$id]['Hours']+=$hours;
+				if($rates[0]['maxhours']<$hours){
+					$payrolls[$id]['Amount']+=$rates[0]['longrate'];
+				}
+				else{
+					$payrolls[$id]['Amount']+=$rates[0]['shortrate'];
+				}
+			}
+
+			for($i=0; $i<count($payrolls); $i++){
+				if($payrolls[$i]['Amount']>$rates[0]['maxweeklyrate']){
+					$payrolls[$i]['Amount']=$rates[0]['maxweeklyrate'];
+				}
+			}
+		}
+	}
 }
