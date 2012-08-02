@@ -70,8 +70,11 @@ class EventsClientsController extends AppController {
 			foreach ($this->request->data['EventsClient']['client_id'] as $value) {
 				$ValArray[]= array('event_id'=>$id, 'client_id'=>$value);
 				$ClientDetails = $this->EventsClient->Client->find('first', array('conditions'=>array('Client.id'=>$value)));
-				$EmailArray[] = $ClientDetails['Client']['email'];
-				$IdArray[] = $value;
+				if($ClientDetails['Client']['communicationchannel_id'] == 1)
+				{
+					$EmailArray[] = $ClientDetails['Client']['email'];
+					$IdArray[] = $value;
+				}
 			}
 			
 			$email = new CakeEmail('gmail');

@@ -51,5 +51,6 @@
 	<ul>
 		<li><?php echo $this->Html->link(__('New Booking'), array('action' => 'bulk_add', $events['0']['Event']['id'] )); ?></li>
 		<li><?php echo $this->Html->link(__('Attendance'), array('action' => 'attendance', $events['0']['Event']['id'] )); ?></li>
+        <li><?php echo $this->Html->link(__('Clients to contact'), array('action' => 'confirmclients', $events['0']['Event']['id'] )); ?></li>
 	</ul>
 </div>
