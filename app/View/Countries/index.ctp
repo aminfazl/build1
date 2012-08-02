@@ -3,14 +3,14 @@
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id');?></th>
-			<th><?php echo $this->Paginator->sort('countryname');?></th>
+			<th><?php echo $this->Paginator->sort('country_name');?></th>
 			<th class="actions"><?php echo __('Actions');?></th>
 	</tr>
 	<?php
 	foreach ($countries as $country): ?>
 	<tr>
 		<td><?php echo h($country['Country']['id']); ?>&nbsp;</td>
-		<td><?php echo h($country['Country']['countryname']); ?>&nbsp;</td>
+		<td><?php echo h($country['Country']['country_name']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $country['Country']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $country['Country']['id'])); ?>

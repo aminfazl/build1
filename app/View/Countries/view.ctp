@@ -6,9 +6,9 @@
 			<?php echo h($country['Country']['id']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Countryname'); ?></dt>
+		<dt><?php echo __('Country Name'); ?></dt>
 		<dd>
-			<?php echo h($country['Country']['countryname']); ?>
+			<?php echo h($country['Country']['country_name']); ?>
 			&nbsp;
 		</dd>
 	</dl>
@@ -30,14 +30,21 @@
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
 		<th><?php echo __('Id'); ?></th>
-		<th><?php echo __('Clientstatus Id'); ?></th>
-		<th><?php echo __('Communicationchannel Id'); ?></th>
 		<th><?php echo __('First Name'); ?></th>
 		<th><?php echo __('Gender'); ?></th>
 		<th><?php echo __('Last Name'); ?></th>
 		<th><?php echo __('Birth Date'); ?></th>
-		<th><?php echo __('Household Id'); ?></th>
+		<th><?php echo __('Disability Id'); ?></th>
+		<th><?php echo __('School Name'); ?></th>
+		<th><?php echo __('Otherservices Description'); ?></th>
+		<th><?php echo __('Prioritylevel Id'); ?></th>
+		<th><?php echo __('Fundingsource Id'); ?></th>
+		<th><?php echo __('Religion Id'); ?></th>
+		<th><?php echo __('Dateaccepted'); ?></th>
 		<th><?php echo __('Birthcountry Id'); ?></th>
+		<th><?php echo __('Communicationchannel Id'); ?></th>
+		<th><?php echo __('Status Id'); ?></th>
+		<th><?php echo __('Family Id'); ?></th>
 		<th class="actions"><?php echo __('Actions');?></th>
 	</tr>
 	<?php
@@ -45,14 +52,21 @@
 		foreach ($country['client'] as $client): ?>
 		<tr>
 			<td><?php echo $client['id'];?></td>
-			<td><?php echo $client['clientstatus_id'];?></td>
-			<td><?php echo $client['communicationchannel_id'];?></td>
 			<td><?php echo $client['first_name'];?></td>
 			<td><?php echo $client['gender'];?></td>
 			<td><?php echo $client['last_name'];?></td>
 			<td><?php echo $client['birth_date'];?></td>
-			<td><?php echo $client['household_id'];?></td>
+			<td><?php echo $client['disability_id'];?></td>
+			<td><?php echo $client['school_name'];?></td>
+			<td><?php echo $client['otherservices_description'];?></td>
+			<td><?php echo $client['prioritylevel_id'];?></td>
+			<td><?php echo $client['fundingsource_id'];?></td>
+			<td><?php echo $client['religion_id'];?></td>
+			<td><?php echo $client['dateaccepted'];?></td>
 			<td><?php echo $client['birthcountry_id'];?></td>
+			<td><?php echo $client['communicationchannel_id'];?></td>
+			<td><?php echo $client['status_id'];?></td>
+			<td><?php echo $client['family_id'];?></td>
 			<td class="actions">
 				<?php echo $this->Html->link(__('View'), array('controller' => 'clients', 'action' => 'view', $client['id'])); ?>
 				<?php echo $this->Html->link(__('Edit'), array('controller' => 'clients', 'action' => 'edit', $client['id'])); ?>

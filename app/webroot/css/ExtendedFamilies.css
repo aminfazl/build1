@@ -217,6 +217,9 @@ div.actions h3 {
 	color:#777;
 }
 
+.ajaxForm{
+	display:none;
+}
 
 /** Tables **/
 table {
@@ -404,7 +407,27 @@ input, textarea {
 	font-family: "frutiger linotype", "lucida grande", "verdana", sans-serif;
 	padding: 1%;
 	width:98%;
+	
 }
+
+.txtArea{
+	clear: both;
+	font-size: 140%;
+	font-family: "frutiger linotype", "lucida grande", "verdana", sans-serif;
+	padding: 1%;
+	width:98%;
+	height:150px;
+	
+}
+
+.suburb {
+	width:30%;	
+}
+
+.postcode{
+	width:9%;	
+}
+
 select {
 	clear: both;
 	font-size: 120%;
@@ -827,4 +850,24 @@ pre {
 /** Elements **/
 #url-rewriting-warning {
 	display:none;
+}
+
+#addForm a{
+	display:inline-block;
+	width:80px;
+	line-height:25px;
+	background-color:#F36;
+	margin:10px;
+	text-align:center;
+	text-decoration:none;
+	color:#FFF;
+}
+
+
+
+
+#addForm a:hover{
+	background-color:#F66;
+}
+
 }

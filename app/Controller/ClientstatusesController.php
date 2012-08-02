@@ -38,7 +38,7 @@ class ClientstatusesController extends AppController {
  * @return void
  */
 	public function add() {
-		if ($this->request->is('post')) {
+		/*if ($this->request->is('post')) {
 			$this->Clientstatus->create();
 			if ($this->Clientstatus->save($this->request->data)) {
 				$this->Session->setFlash(__('The clientstatus has been saved'));
@@ -46,6 +46,40 @@ class ClientstatusesController extends AppController {
 			} else {
 				$this->Session->setFlash(__('The clientstatus could not be saved. Please, try again.'));
 			}
+		}
+		else if($this->request->isAjax())
+		{
+			$this->render('ajax_add', 'ajax');
+			
+		}*/
+		if ($this->request->is('post')) {
+			$this->Clientstatus->create();
+			if ($this->Clientstatus->save($this->request->data)) {
+				if($this->request->isAjax())
+				{
+					echo $this->Clientstatus->getLastInsertID();
+					$this->autoRender = false;
+				}		
+				else
+				{
+					$this->Session->setFlash(__('The client status has been saved'));
+					$this->redirect(array('action' => 'index'));
+				}
+			} else {
+				if($this->request->isAjax())
+				{
+					echo 0;
+					$this->autoRender(false);
+					exit();
+				}
+				else	
+					$this->Session->setFlash(__('The client status could not be saved. Please, try again.'));
+			}
+		}
+		
+		else if($this->request->isAjax())
+		{
+			$this->render('ajax_add', 'ajax');
 		}
 	}
 
@@ -70,6 +104,7 @@ class ClientstatusesController extends AppController {
 		} else {
 			$this->request->data = $this->Clientstatus->read(null, $id);
 		}
+		
 	}
 
 /**

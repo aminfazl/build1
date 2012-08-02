@@ -3,7 +3,7 @@
 	<fieldset>
 		<legend><?php echo __('Add Country'); ?></legend>
 	<?php
-		echo $this->Form->input('countryname');
+		echo $this->Form->input('country_name');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit'));?>

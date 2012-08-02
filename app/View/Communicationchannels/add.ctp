@@ -3,7 +3,7 @@
 	<fieldset>
 		<legend><?php echo __('Add Communication Channel'); ?></legend>
 	<?php
-		echo $this->Form->input('Communication Channel Name');
+		echo $this->Form->input('communicationchannel_name', array('label' => 'Communication Channel Name'));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit'));?>

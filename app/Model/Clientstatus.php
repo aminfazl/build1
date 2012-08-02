@@ -40,7 +40,7 @@ class Clientstatus extends AppModel {
 	public $hasMany = array(
 		'Client' => array(
 			'className' => 'Client',
-			'foreignKey' => 'clientstatus_id',
+			'foreignKey' => 'status_id',
 			'dependent' => false,
 			'conditions' => '',
 			'fields' => '',
